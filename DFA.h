@@ -140,3 +140,27 @@ DFA AcceptingNoString(vector<string> {"0"}, set<string> {"0", "1"}, "0", map<pai
 // Completed TASK 6 - DFA Accepting Empty String - EPSILON
 DFA AcceptingEmptyString(vector<string> {"0", "1"}, set<string> {"0", "1"}, "0", map<pair<string, string>, string> { {pair<string, string>("0", "0"), "1"}, { pair<string, string>("0", "1"), "1" }}, vector<string> {"0"});
 
+// Completed TASK 7 - A function returning a DFA that accep only the string of one given character
+DFA AcceptingStringofOneCharacter(const string& oneCharacter, set<string> initAlphabet) {
+
+	if (!isSubSet(set<string>{oneCharacter}, initAlphabet))
+	{
+		cout << "The given character does not belong to the alphabet\n";
+		exit(-1);
+	}
+	map<pair<string, string>, string> initTransition;
+	if (initAlphabet.begin() != initAlphabet.end())
+
+		for (auto p = initAlphabet.begin(); p != initAlphabet.end(); p++)
+		{
+
+			if (*p != oneCharacter)
+				initTransition[pair<string, string>("0", *p)] = "2";
+			initTransition[pair<string, string>("1", *p)] = "2";
+			initTransition[pair<string, string>("2", *p)] = "2";
+			initTransition[pair<string, string>("0", oneCharacter)] = "1";
+
+		}
+	DFA newDFA(vector<string>{"0", "1", "3"}, initAlphabet, "0", initTransition, vector<string>{"1"});
+	return newDFA;
+}
