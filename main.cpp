@@ -54,7 +54,9 @@ int main(int argc, char * argv[]) {
 	test_DFA_string_of_even_0_and_1();
 	test_DFA_string_of_0s_start_and_end_with_1();
 	test_DFA_string_that_accept_only_101();
-	test_string_that_does_not_contain_consecutive_1();
+	test_DFA_string_that_does_not_contain_consecutive_1();
+	test_DFA_string_of_len_2();
+	test_DFA_strings_of_110s();
 	
 	char c;
 	cin >> c;
