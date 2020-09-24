@@ -47,3 +47,16 @@ public:
 	friend ostream&  operator<<(ostream& OutStream, const myString& myObject);
 
 };
+
+bool isSubSet(set<string> alphabetA, set<string> alphabetB); // check if alphabetA a subset of alphabetB
+
+int calculate_the_number_of_string_of_a_given_len_or_shorter_can_be_generated(int alphabetSize, int len);//helper function of generate_Nth_string_lexi
+
+
+// **** TASK 3 ****/ 
+myString generate_Nth_string_lexi(set<string> alphabet, int n); 
+
+
+
+#endif // !MYSTRING_H
+
