@@ -26,5 +26,18 @@ int main(int argc, char * argv[]) {
 	cout << "Print out the 1th to 31th string of {0,1}\n\n";
 	for (int i = 1; i < 32; i++)
 	cout << generate_Nth_string_lexi(set<string> {"0", "1"}, i) << endl;
+	
+	
+	cout << "********************ACCEPTING NO STRING*************" << endl;
+	if (!AcceptingNoString.isAccepted(myString("10010")))
+	cout << "PASSED\n\n";
+	else
+	cout << "NOT PASSED\n\n";
+
+	cout << "********************ACCEPTING EMPTY STRING*************" << endl;
+	if (AcceptingEmptyString.isAccepted(myString("")))
+	cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
   
   }
