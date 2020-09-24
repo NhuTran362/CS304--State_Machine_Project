@@ -45,5 +45,20 @@ int main(int argc, char * argv[]) {
 	if (myDFA.isAccepted(myString("a")))
 		cout << "PASSED\n\n";
 	else cout << "PASSED\n\n";
+	test_DFA_even_len();
+	test_DFA_string_of_0s();
+	test_DFA_recognize_nano();
+	test_DFA_string_end_with_0();
+	test_DFA_string_of_even_number_of_0();
+	test_DFA_string_of_three_consecutive_zero(); 
+	test_DFA_string_of_even_0_and_1();
+	test_DFA_string_of_0s_start_and_end_with_1();
+	test_DFA_string_that_accept_only_101();
+	test_string_that_does_not_contain_consecutive_1();
+	
+	char c;
+	cin >> c;
+
+	return 0;
   
   }
