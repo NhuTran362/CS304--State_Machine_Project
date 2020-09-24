@@ -195,6 +195,12 @@ DFA string_that_accept_only_101(vector<string>{"0", "1", "2", "3", "4"}, set<str
 
 //accept only string that does not contain consecutive 1
 DFA string_that_does_not_contain_consecutive_1(vector<string>{"0", "1", "2"}, set<string>{"0", "1"}, "0", map<Pair, string>{ {Pair("0", "1"), "1"}, { Pair("1","1"), "2" }, { Pair("1","0"), "0" }}, vector<string> {"0", "1"});
+
+//accept only strings of length 2
+DFA string_of_len_2(vector<string> {"0", "1", "2", "3"}, set<string>{"0", "1"}, "0", map<Pair, string>{ {Pair("0", "0"), "1"}, { Pair("0","1"),"1" }, { Pair("1","0"),"2" }, { Pair("1","1"),"2" }, { Pair("2","0"),"3" }, { Pair("2","1"),"3" }}, vector<string>{"2"});
+
+//acceps strings that have two 1 follow by 1 zero e.g 110, 110110, 110110110
+DFA strings_of_110s(vector<string> {"0", "1", "2", "3", "4"}, set<string>{"0", "1"}, "0", map<Pair, string>{ {Pair("0", "1"), "1"}, { Pair("0", "0"), "4" }, { Pair("1", "1"), "2" }, { Pair("1", "0"), "4" }, { Pair("2", "0"), "3" }, { Pair("2", "1"), "4" }, { Pair("3", "1"), "1" }, { Pair("3", "0"), "4" }}, vector<string> {"3"});
 /************************************/
 
 
@@ -210,8 +216,9 @@ void test_DFA_string_of_three_consecutive_zero();
 void test_DFA_string_of_even_0_and_1();
 void test_DFA_string_of_0s_start_and_end_with_1();
 void test_DFA_string_that_accept_only_101();
-void test_string_that_does_not_contain_consecutive_1();
-
+void test_DFA_string_that_does_not_contain_consecutive_1();
+void test_DFA_string_of_len_2();
+void test_DFA_strings_of_110s();
 
 void test_DFA_even_len() {
 
@@ -339,7 +346,7 @@ void test_DFA_string_that_accept_only_101() {
 	return;
 }
 
-void test_string_that_does_not_contain_consecutive_1() {
+void test_DFA_string_that_does_not_contain_consecutive_1() {
 	cout << "********** TESTING DFA STRING_THAT_DOES_NOT_CONTAIN_CONSECUTIVE_1 ************\n" << endl;
 
 	if (!string_that_does_not_contain_consecutive_1.isAccepted(myString("0001100010")) && !string_that_does_not_contain_consecutive_1.isAccepted(myString("010011100")) && string_that_does_not_contain_consecutive_1.isAccepted(myString("1010001001")) && string_that_does_not_contain_consecutive_1.isAccepted(myString("10101010")))
@@ -350,6 +357,32 @@ void test_string_that_does_not_contain_consecutive_1() {
 
 	cout << "NOT PASSED\n\n" << endl;
 	return;
+}
+void test_DFA_string_of_len_2() {
+	cout << "********** TESTING DFA STRING_OF_LEN_2 ************\n" << endl;
+
+
+	if (!string_of_len_2.isAccepted(myString("0001100010")) && !string_of_len_2.isAccepted(myString("0")) && string_of_len_2.isAccepted(myString("10")) && string_of_len_2.isAccepted(myString("11")))
+	{
+		cout << "PASSED\n\n" << endl;
+		return;
+	}
+
+	cout << "NOT PASSED\n\n" << endl;
+	return;
+}
+void test_DFA_strings_of_110s() {
+	cout << "********** TESTING DFA STRING_OF_110s ************\n" << endl;
+
+	if (!strings_of_110s.isAccepted(myString("0001100010")) && !strings_of_110s.isAccepted(myString("11011010")) && strings_of_110s.isAccepted(myString("110110110110")))
+	{
+		cout << "PASSED\n\n" << endl;
+		return;
+	}
+
+	cout << "NOT PASSED\n\n" << endl;
+	return;
+
 }
 
 
