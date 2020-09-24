@@ -39,5 +39,11 @@ int main(int argc, char * argv[]) {
 	cout << "PASSED\n\n";
 	else
 		cout << "NOT PASSED\n\n";
+	
+	cout << "********************ACCEPTING ONE CHARACTER*************" << endl;
+	DFA myDFA = AcceptingStringofOneCharacter("a", set<string> {"a", "b", "c"});
+	if (myDFA.isAccepted(myString("a")))
+		cout << "PASSED\n\n";
+	else cout << "PASSED\n\n";
   
   }
