@@ -133,3 +133,10 @@ string DFA::myTransition(string state, string character) {
 
 	return state;
 }
+
+// Completed TASK 5 - DFA Accepting no String
+DFA AcceptingNoString(vector<string> {"0"}, set<string> {"0", "1"}, "0", map<pair<string, string>, string> {}, vector<string> {});
+
+// Completed TASK 6 - DFA Accepting Empty String - EPSILON
+DFA AcceptingEmptyString(vector<string> {"0", "1"}, set<string> {"0", "1"}, "0", map<pair<string, string>, string> { {pair<string, string>("0", "0"), "1"}, { pair<string, string>("0", "1"), "1" }}, vector<string> {"0"});
+
