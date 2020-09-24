@@ -105,3 +105,60 @@ bool myString::check_alpha_string(set<string> myAlphabet, vector<string> _string
 	return true;
 
 }
+
+bool isSubSet(set<string> alphabetA, set<string> alphabetB) {
+
+	if (alphabetA == set<string>{"EPSILON"})
+		return true;
+	
+	for (auto &each:alphabetA)
+		if (find(alphabetB.begin(), alphabetB.end(), each) == alphabetB.end())
+			return false;
+		
+		return true;
+}
+
+
+int calculate_the_number_of_string_of_a_given_len_or_shorter_can_be_generated(int alphabetSize, int len) {
+	int result = 0, i = 0;
+	while (i < len)
+	{
+		result += (int) pow(alphabetSize, i);
+		i++;
+	}
+	return result;
+}
+
+
+
+// Completed TASK 3 - write a function that generates the Nth string of a given alphabet’s lexicographic order.
+
+
+myString generate_Nth_string_lexi(set<string> alphabet, int n) {
+	vector<string> result;
+	
+	if (n <= 1)
+	{
+		myString newString(alphabet, vector<string> {"EPSILON"});
+		return newString;
+	}
+	int len = (int) floor(log(n) / log(alphabet.size()));
+	
+	for (len; len > 0; len--)
+	{
+		int number_of_string_with_shorter_len = calculate_the_number_of_string_of_a_given_len_or_shorter_can_be_generated(alphabet.size(), len);
+	
+		int next_sympol_position_in_alphabet = (int) floor( ( n - number_of_string_with_shorter_len- 1) /  ( pow(alphabet.size(),len) / alphabet.size() ) );
+
+		n = (n - number_of_string_with_shorter_len - 1) % (int) pow(alphabet.size(), len - 1)  + calculate_the_number_of_string_of_a_given_len_or_shorter_can_be_generated(alphabet.size(), len-1) + 1;
+		
+		auto p = alphabet.begin();
+
+		for (int i = 0; i < next_sympol_position_in_alphabet; i++)
+			p++;
+		result.push_back(*p);
+	}
+	myString newString(alphabet, result);
+	return newString;
+}
+/*******************************************/
