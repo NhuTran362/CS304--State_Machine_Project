@@ -66,6 +66,16 @@ public:
 	void setStartState(string initStartState) { startState = initStartState; }
 	void setAcceptingState(vector<string> initAcceptingState) { acceptingState = initAcceptingState; acceptingState_num = initAcceptingState.size(); }
 	void setTransition(map<Pair, string> initTranistion) { transition = initTranistion; }
+	
+	/****** A FUNCTIION TO CHECK IF A STRING IS ACCEPTED ***********/
+	/******************** TASK 10 ********************/
+	bool isAccepted(myString inputString) {
+
+		string finalState = getFinalState(inputString);
+		vector<string> acceptingState = getAcceptingState();
+		return (find(acceptingState.begin(), acceptingState.end(), finalState) != acceptingState.end());
+	}
+	/*******************************************************************/
   
   }
   
