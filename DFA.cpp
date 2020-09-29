@@ -247,3 +247,25 @@ void test_DFA_strings_of_110s() {
 	return;
 
 }
+
+list<config> trace(DFA inputDFA, myString inputString) {
+
+	list<config> myTrace;
+	string _state = inputDFA.getStartState();
+	
+	int i = 0, len = inputString.getStringLen();
+	config temp;
+
+	for (i; i <= len; i++) {
+	
+		temp.q = _state;
+		temp.w = inputString;
+		myTrace.push_back(temp);
+		_state = inputDFA.myTransition(temp.q,inputString.getCharacterAt(0));
+		inputString.pop_front();
+		cout << _state << endl;
+	
+	}
+
+	return myTrace;
+}
