@@ -58,6 +58,30 @@ int main(int argc, char * argv[]) {
 	test_DFA_string_of_len_2();
 	test_DFA_strings_of_110s();
 	
+	//Testing task 11
+	list<config> test = trace(string_of_even_0_and_1, myString("100111010"));
+	list<config> test2 = trace(strings_of_110s, myString("1101101101101000"));
+	
+	for (auto p = test.begin(); p != test.end(); p++)
+	{
+		
+		cout << "(" << p->q << ", " << p->w << " )";
+	}
+	cout << endl;
+
+	for (auto p = test2.begin(); p != test2.end(); p++)
+	{
+
+		cout << "(" << p->q << ", " << p->w << " )";
+	}
+	cout << endl;
+	
+	char c;
+	cin >> c;
+
+	return 0;
+}
+	
 	char c;
 	cin >> c;
 
