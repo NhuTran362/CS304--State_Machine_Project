@@ -106,10 +106,10 @@ static DFA string_end_with_0(vector<string>{"0", "1"}, set<string>{"0", "1"}, "0
 static DFA string_of_even_number_of_0(vector<string>{"0", "1"}, set<string>{"0", "1"}, "0", map<Pair, string>{ {Pair("0", "0"), "1"}, { Pair("1", "0"), "0" }}, vector<string> {"0"});
 
 //accept strings that have at least three consecutive zero e.g 1000, 10000101, 000
-static DFA string_of_three_consecutive_zero(vector<string>{"0", "1"}, set<string>{"0", "1", "2", "3"}, "0", map<Pair, string>{ {Pair("0", "0"), "1"}, { Pair("1", "0"), "2" }, { Pair("1","1"), "0" }, { Pair("2","0"), "3" }, { Pair("2","1"), "0" }}, vector<string> {"3"});
+static DFA string_of_three_consecutive_zero(vector<string>{"0", "1","2","3"}, set<string>{"0", "1"}, "0", map<Pair, string>{ {Pair("0", "0"), "1"}, { Pair("1", "0"), "2" }, { Pair("1","1"), "0" }, { Pair("2","0"), "3" }, { Pair("2","1"), "0" }}, vector<string> {"3"});
 
 //accept string that have even number of 0 and 1
-static DFA string_of_even_0_and_1(vector<string>{"0", "1", "2", "3"}, set<string>{"0", "1", "2"}, "0", map<Pair, string>{ {Pair("0", "0"), "1"}, { Pair("0", "1"), "2" }, { Pair("1","0"), "0" }, { Pair("1","1"), "3" }, { Pair("2","0"), "3" }, { Pair("2","1"), "0" }, { Pair("3","0"), "2" }, { Pair("3","1"), "1" }}, vector<string> {"0"});
+static DFA string_of_even_0_and_1(vector<string>{"0", "1", "2", "3"}, set<string>{"0", "1"}, "0", map<Pair, string>{ {Pair("0", "0"), "1"}, { Pair("0", "1"), "2" }, { Pair("1","0"), "0" }, { Pair("1","1"), "3" }, { Pair("2","0"), "3" }, { Pair("2","1"), "0" }, { Pair("3","0"), "2" }, { Pair("3","1"), "1" }}, vector<string> {"0"});
 
 // accept string that strat and end with 1 and have a bunch of 0 in betwen e.g 100001,11,101,10000001
 static DFA string_of_0s_start_and_end_with_1(vector<string>{"0", "1", "2", "3"}, set<string>{"0", "1"}, "0", map<Pair, string>{ {Pair("0", "0"), "3"}, { Pair("0", "1"), "1" }, { Pair("1","1"), "2" }, { Pair("2","0"), "3" }, { Pair("2","1"), "3" }, }, vector<string> {"2"});
@@ -143,6 +143,13 @@ void test_DFA_string_that_accept_only_101();
 void test_DFA_string_that_does_not_contain_consecutive_1();
 void test_DFA_string_of_len_2();
 void test_DFA_strings_of_110s();
+
+//TASK 11
+typedef struct Config{
+	string q; //state
+	myString w; //string
+} config;
+list<config> trace(DFA, myString);
 
 
 
