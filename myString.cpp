@@ -162,3 +162,12 @@ myString generate_Nth_string_lexi(set<string> alphabet, int n) {
 	return newString;
 }
 /*******************************************/
+
+void myString::pop_front() {
+	if (!_string.empty())
+	{
+		_string.erase(_string.begin());
+
+		_stringLen--;
+	}
+}
