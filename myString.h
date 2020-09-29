@@ -42,7 +42,14 @@ public:
 		for (int i = 0; i < _stringLen;i++)
 			cout << _string[i] << " ";
 	}
-	string getCharacterAt(int i) const { return _string[i]; }
+	string getCharacterAt(int i) const {
+	if (!_string.empty())
+		return _string[i];
+	else
+		return "EPSILON";
+	}
+	
+	void pop_front();
 
 	friend ostream&  operator<<(ostream& OutStream, const myString& myObject);
 
