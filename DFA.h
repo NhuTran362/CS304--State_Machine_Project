@@ -23,9 +23,7 @@ private:
 	int alphabetSize = 0;
 	int acceptingState_num = 0;
 
-	string getFinalState(const myString& inputString);
 	
-	string myTransition(string state, string character);
 
 
 public:
@@ -66,6 +64,10 @@ public:
 	void setStartState(string initStartState) { startState = initStartState; }
 	void setAcceptingState(vector<string> initAcceptingState) { acceptingState = initAcceptingState; acceptingState_num = initAcceptingState.size(); }
 	void setTransition(map<Pair, string> initTranistion) { transition = initTranistion; }
+	
+	string getFinalState(const myString& inputString);
+	
+	string myTransition(string state, string character);
 	
 	/****** A FUNCTIION TO CHECK IF A STRING IS ACCEPTED ***********/
 	/******************** TASK 10 ********************/
