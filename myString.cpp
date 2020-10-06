@@ -52,6 +52,14 @@ myString::myString(set<string> initAlphabet, string initString) {
 	}
 }
 
+myString::myString(const myString& obj) {
+	alphabet = obj.alphabet;
+	_string = obj._string;
+	alphabetSize = obj.alphabetSize;
+	_stringLen = obj._stringLen;
+
+};
+
 ostream& operator<<(ostream& OutStream, const myString& myObject) {
 
 	if (myObject._stringLen == 0)
@@ -64,6 +72,28 @@ ostream& operator<<(ostream& OutStream, const myString& myObject) {
 	return OutStream;
 }
 
+void myString::operator=(const myString& copiedOjb) {
+	alphabet = copiedOjb.alphabet;
+	_string = copiedOjb._string;
+	alphabetSize = copiedOjb.alphabetSize;
+	_stringLen = copiedOjb._stringLen;
+
+}
+
+bool myString::operator==(const myString& obj) {
+	if (alphabet == obj.alphabet && _string == obj._string && alphabetSize == obj.alphabetSize && _stringLen == obj._stringLen)
+		return true;
+	return false;
+
+}
+
+bool myString::operator!=(const myString& obj) {
+	if (alphabet != obj.alphabet || _string != obj._string || alphabetSize != obj.alphabetSize || _stringLen != obj._stringLen)
+		return true;
+	return false;
+
+}
+
 vector<string> myString::convert_standard_string_to_vector_based_string(set<string> alphabet, string standard_string) {
 
 	vector<string> newString;
@@ -74,7 +104,6 @@ vector<string> myString::convert_standard_string_to_vector_based_string(set<stri
 		a += standard_string[i];
 		if (find(alphabet.begin(), alphabet.end(), a) != alphabet.end())
 		{
-			cout << "push " << a << " to the newString at i = " << i << endl;
 			newString.push_back(a);
 			a = "";
 			i++;
@@ -171,3 +200,19 @@ void myString::pop_front() {
 		_stringLen--;
 	}
 }
+
+void myString::push_back(string newCharacter) {
+
+	if (alphabet.find(newCharacter) != alphabet.end())
+	{
+		if (_string[0] != "EPSILON")
+		
+			_string.push_back(newCharacter);
+			
+		else
+			_string[0] = newCharacter;
+
+		_stringLen++;
+	}
+}
+
