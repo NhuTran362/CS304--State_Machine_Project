@@ -155,6 +155,8 @@ list<config> trace(DFA, myString);
 myString returnAcceptedString(const DFA&);
 myString search(set<string> alphabet, map<Pair, string> transition, set<string> visited, int totalStates, string current, myString result, vector<string> acceptingStates);
 
+//TASK 13
 
+DFA DFA_Complement(const DFA&);
 
 #endif // !DFA_H
