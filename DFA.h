@@ -151,6 +151,10 @@ typedef struct Config{
 } config;
 list<config> trace(DFA, myString);
 
+//TASK 12
+myString returnAcceptedString(const DFA&);
+myString search(set<string> alphabet, map<Pair, string> transition, set<string> visited, int totalStates, string current, myString result, vector<string> acceptingStates);
+
 
 
 #endif // !DFA_H
