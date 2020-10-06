@@ -31,6 +31,7 @@ public:
 	myString(set<string> initAlphabet, vector<string> initString);
 	myString(string initString);
 	myString(set<string> initAlphabet, string initString);
+	myString(const myString& obj);
 
 
 	set<string> getAlphabet() const { return alphabet; }
@@ -50,8 +51,12 @@ public:
 	}
 	
 	void pop_front();
+	void push_back(string);
 
 	friend ostream&  operator<<(ostream& OutStream, const myString& myObject);
+	void operator=(const myString& copiedOjb);
+	bool operator==(const myString& obj);
+	bool operator!=(const myString& obj);
 
 };
 
