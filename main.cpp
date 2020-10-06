@@ -76,6 +76,42 @@ int main(int argc, char * argv[]) {
 	}
 	cout << endl;
 	
+	
+	//test task 12
+	cout << returnAcceptedString(AcceptingNoString) << endl;
+	if (!AcceptingNoString.isAccepted(returnAcceptedString(AcceptingNoString)))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+
+	cout << returnAcceptedString(AcceptingEmptyString) << endl;
+	if (AcceptingEmptyString.isAccepted(returnAcceptedString(AcceptingEmptyString)))
+		cout << "PASSED\n\n";
+
+	cout << returnAcceptedString(even_len) << endl;
+	if (even_len.isAccepted(returnAcceptedString(even_len)))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+
+	cout << returnAcceptedString(string_that_accept_only_101) << endl;
+	if (string_that_accept_only_101.isAccepted(returnAcceptedString(string_that_accept_only_101)))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+
+	cout << returnAcceptedString(strings_of_110s) << endl;
+	if (strings_of_110s.isAccepted(returnAcceptedString(strings_of_110s)))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+
+	cout << returnAcceptedString(recognize_nano) << endl;
+	if (recognize_nano.isAccepted(returnAcceptedString(recognize_nano)))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+	
 	char c;
 	cin >> c;
 
