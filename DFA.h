@@ -97,7 +97,7 @@ static DFA even_len(vector<string> { "0", "1" }, set<string> {"0", "1"}, "0", ma
 static DFA string_of_0s(vector<string> { "0", "1" }, set<string> {"0", "1"}, "0", map<Pair, string> { { Pair("0", "1"), "1" }}, vector<string> {"0"});
 
 // accept strings that consit the word "nano" in it
-static DFA recognize_nano(vector<string> {"0", "1", "2", "3"}, set<string>{"n", "a", "o"}, "0", map<Pair, string> { {Pair("0", "n"), "1"}, { Pair("1", "a"), "2" }, { Pair("1","o"),"0" }, { Pair("2", "n"), "3" }, { Pair("2", "o"), "0" }, { Pair("2", "a"), "0" }, { pair<string,string>("3", "o"), "4" }, { pair<string,string>("3", "a"), "2" }, { pair<string,string>("3", "n"), "1" }, { pair<string,string>("3", "a"), "2" }}, vector<string> {"4"});
+static DFA recognize_nano(vector<string> {"0", "1", "2", "3", "4"}, set<string>{"n", "a", "o"}, "0", map<Pair, string> { {Pair("0", "n"), "1"}, { Pair("1", "a"), "2" }, { Pair("1","o"),"0" }, { Pair("2", "n"), "3" }, { Pair("2", "o"), "0" }, { Pair("2", "a"), "0" }, { pair<string,string>("3", "o"), "4" }, { pair<string,string>("3", "a"), "2" }, { pair<string,string>("3", "n"), "1" }, { pair<string,string>("3", "a"), "2" }}, vector<string> {"4"});
 
 // accept string that end with zero
 static DFA string_end_with_0(vector<string>{"0", "1"}, set<string>{"0", "1"}, "0", map<Pair, string>{ {Pair("0", "1"), "1"}, { Pair("1", "0"), "0" }}, vector<string> {"0"});
