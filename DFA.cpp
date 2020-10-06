@@ -17,10 +17,7 @@ string DFA::getFinalState(const myString& inputString) {
 
 	if (!isSubSet(inputString.getAlphabet(), alphabet))
 	{
-		cout << "The input string does not used the same alphabet as this DFA\n" << endl;
-		char c;
-		cin >> c;
-		exit(-1);
+		return "false";
 	}
 
 	int i = 0;
