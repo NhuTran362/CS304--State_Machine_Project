@@ -263,9 +263,64 @@ list<config> trace(DFA inputDFA, myString inputString) {
 		myTrace.push_back(temp);
 		_state = inputDFA.myTransition(temp.q,inputString.getCharacterAt(0));
 		inputString.pop_front();
-		cout << _state << endl;
+	
 	
 	}
 
 	return myTrace;
+}
+
+myString  returnAcceptedString(const DFA& inputDFA) {
+	
+	vector<string> states = inputDFA.getState();
+	set<string> alphabet = inputDFA.getAlphabet();
+	string start = inputDFA.getStartState();
+	vector<string> acceptingStates = inputDFA.getAcceptingState();
+	map<Pair, string> transition = inputDFA.getTransition();
+	
+	set<string> visited = {start };
+	myString result(alphabet, "EPSILON");
+	if (acceptingStates.empty())
+		return myString("false");
+
+	return  search (alphabet, transition, visited,states.size(), start, result, acceptingStates);
+
+
+}
+
+myString search(set<string> alphabet, map<Pair, string> transition, set<string> visited, int totalStates, string current, myString result, vector<string> acceptingStates) {
+	//cout << "\nSEARCH CALL: \n";
+	//cout << result << endl;
+	//cout << "current state: " << current << endl;
+	//cout << "visit.size: "<< visited.size() << " totalStates: " << totalStates << endl;
+	
+	if (find(acceptingStates.begin(), acceptingStates.end(), current) != acceptingStates.end())
+	{
+		///cout << "Return result at the begining\n";
+		return result;
+	}
+	for (auto p = alphabet.begin(); p != alphabet.end(); p++)
+	{
+		auto p1 = transition.find(Pair(current, *p));
+		if (p1 != transition.end() && visited.find(p1->second) == visited.end())
+		{
+			set<string>newVisited = visited;
+			newVisited.insert(p1->second);
+			myString newResult(result);
+			//cout << "before push: " << newResult << endl;
+			newResult.push_back(*p);
+			//cout << "pushed " << *p << " to the string\n";
+			//cout << "after push: " << newResult << endl;
+			
+
+			if (search(alphabet, transition, newVisited, totalStates, p1->second, newResult, acceptingStates) != myString("false"))
+			{
+				//cout << "return newresult\n";
+				return search(alphabet, transition, newVisited, totalStates, p1->second, newResult, acceptingStates);
+			}
+		}
+	}
+	//cout << "return false when out of loop\n";
+	return myString("false");
+
 }
