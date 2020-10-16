@@ -58,6 +58,7 @@ public:
 		int alphabetSize = initDFA.getAlphabetSize();
 		int acceptingState_num = initDFA.getAcceptingState_num();
 	}
+	friend ostream& operator<<(ostream& OStream, const DFA& obj);
 
 	void setState(vector<string> initState) { state = initState; stateNum = initState.size(); }
 	void setalphabet(set<string> initAlphabet) { alphabet = initAlphabet; alphabetSize = initAlphabet.size(); }
