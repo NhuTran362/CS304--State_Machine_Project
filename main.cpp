@@ -160,6 +160,10 @@ int main(int argc, char * argv[]) {
 	test_string_that_accept_only_101_SUBSET_string_of_0s_start_and_end_with_1();
 	test_string_that_does_not_contain_consecutive_1_SUBSET_even_len();
 
+	if (DFA_Equality(string_of_len_2, DFA_Intersection(string_of_len_2, even_len)))
+		cout << "PASSED\n";
+	else
+		cout << "NOT PASSED\n";
 	
 	char c;
 	cin >> c;
