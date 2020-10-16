@@ -163,4 +163,20 @@ DFA DFA_Complement(const DFA&);
 //TASK 14
 DFA DFA_Union(const DFA&, const DFA&);
 
+//TASK 15
+
+void test_even_len_OR_strings_of_0s();
+void test_string_end_with_0_OR_string_of_even_number_of_0();
+void test_string_of_three_consecutive_zero_OR_strings_of_110s();
+void test_string_of_len_2_OR_string_that_does_not_contain_consecutive_1();
+void test_string_of_even_0_and_1_OR_string_of_three_consecutive_zero();
+void test_even_len_OR_strings_of_110s();
+void test_string_end_with_0_OR_string_of_even_0_and_1();
+void test_string_that_only_accept_101_OR_string_end_with_0();
+void test_string_of_0s_start_and_end_with_1_OR_string_of_0s();
+void test_string_of_110s_OR_string_of_len_2();
+void test_string_of_even_number_of_0_OR_string_of_0s_start_and_end_with_1();
+void test_string_that_does_not_contain_consecutive_1_OR_even_len();
+
+
 #endif // !DFA_H
