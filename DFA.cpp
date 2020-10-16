@@ -736,3 +736,101 @@ void test_string_that_does_not_contain_consecutive_1_AND_even_len() {
 	else
 		cout << "NOT PASSED\n\n";
 }
+
+//TASK 18
+bool DFA_Subset(const DFA& A, const DFA& B) {
+
+	if ( returnAcceptedString(DFA_Intersection(DFA_Complement(B), A)) == myString("false"))
+		return true;
+	else 
+		return false;
+}
+
+//TASK 19
+void test_even_len_SUBSET_strings_of_0s() {
+	cout << "********** TESTING EVEN_LEN_SUBSET_STRINGS_OF_0s ************\n" << endl;
+	if (!DFA_Subset(even_len,string_end_with_0))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_end_with_0_SUBSET_string_of_even_number_of_0() {
+	cout << "********** TESTING STRING_END_WITH_ZERO_SUBSET_STRING_OF_EVEN_NUMBER_OF_ZERO ************\n" << endl;
+
+	if (!DFA_Subset(string_end_with_0, string_of_even_number_of_0))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_three_consecutive_zero_SUBSET_strings_of_110s() {
+	cout << "********** TESTING STRING_OF_THREE_CONSECUTIVE_ZERO_SUBSET_STRINGS_OF_110s ************\n" << endl;
+	if (!DFA_Subset(string_of_three_consecutive_zero, strings_of_110s ))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_len_2_SUBSET_even_len() {
+	cout << "********** TESTING STRING_OF_LEN_2_SUBSET_EVEN_LEN ************\n" << endl;
+	if (DFA_Subset(string_of_len_2, even_len))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_even_0_and_1_SUBSET_string_of_even_number_of_0() {
+	cout << "********** TESTING STRING_OF_EVEN__NUMBER_OF_0_SUBSET_STRING_OF_EVEN_0_AND_1 ************\n" << endl;
+	if (DFA_Subset(string_of_even_0_and_1, string_of_even_number_of_0))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_strings_of_110s_SUBSET_string_end_with_zero() {
+	cout << "********** TESTING STRING_OF_110s_SUBSET_STRING_END_WITH_ZERO ************\n" << endl;
+	if (DFA_Subset(strings_of_110s,string_end_with_0))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_end_with_0_SUBSET_string_of_0s() {
+	cout << "********** TESTING STRING_END_WITH_0_SUBSET_STRING_OF_0s ************\n" << endl;
+	if (!DFA_Subset(string_end_with_0, string_of_0s))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_0s_SUBSET_string_end_with_0() {
+	cout << "********** TESTING STRING_OF_0s_SUBSET_STRING_END_WITH_0 ************\n" << endl;
+	if (DFA_Subset(string_of_0s, string_end_with_0))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_that_accept_only_101_SUBSET_string_that_does_not_contain_consecutive_1() {
+	cout << "********** TESTING STRING_THAT_ACCEPT_ONLY_101_SUBSET_STRING_THAT_DOES_NOT_CONTAIN_CONSECUTIVE_1 ************\n" << endl;
+	if (DFA_Subset(string_that_accept_only_101, string_that_does_not_contain_consecutive_1))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_0s_SUBSET_string_that_does_not_contain_consecutive_1() {
+	cout << "********** TESTING STRINGS_OF_0s_SUBSET_STRING_THAT_DOES_NOT_CONTAIN_CONSECUTIVE_1 ************\n" << endl;
+	if (DFA_Subset(string_of_0s,string_that_does_not_contain_consecutive_1))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_that_accept_only_101_SUBSET_string_of_0s_start_and_end_with_1() {
+	cout << "********** TESTING STRINGS_THAT_ACCEPT_ONLY_101_SUBSET_STRING_OF_0s_START_AND_END_WITH_1 ************\n" << endl;
+	if (DFA_Subset(string_that_accept_only_101,string_of_0s_start_and_end_with_1))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_that_does_not_contain_consecutive_1_SUBSET_even_len() {
+	cout << "********** TESTING STRINGS_THAT_DOES_NOT_CONTAIN_CONSECUTIVE_1_SUBSET_EVEN_LEN ************\n" << endl;
+	DFA myDFA = DFA_Intersection(string_that_does_not_contain_consecutive_1, even_len);
+	if (!DFA_Subset(string_that_does_not_contain_consecutive_1, even_len))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
