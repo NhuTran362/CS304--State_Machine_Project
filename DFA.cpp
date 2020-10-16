@@ -622,3 +622,117 @@ DFA DFA_Intersection(const DFA& A, const DFA& B) {
 
 	return DFA(statesC, AlphabetA, startC, transC, acceptC);
 }
+
+//TASK 17
+void test_even_len_AND_strings_of_0s() {
+	cout << "********** TESTING EVEN_LEN_AND_STRINGS_OF_0s ************\n" << endl;
+	DFA myDFA = DFA_Intersection(even_len, string_of_0s);
+	if (myDFA.isAccepted(myString("00000000")) && !myDFA.isAccepted(myString("01010101101100"))
+		&& !myDFA.isAccepted(myString("0000000")) && !myDFA.isAccepted(myString("1001001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+
+}
+
+void test_string_end_with_0_AND_string_of_even_number_of_0() {
+	cout << "********** TESTING STRING_END_WITH_ZERO_AND_STRING_OF_EVEN_NUMBER_OF_ZERO ************\n" << endl;
+	DFA myDFA = DFA_Intersection(string_end_with_0, string_of_even_number_of_0);
+	if (myDFA.isAccepted(myString("00000000")) && !myDFA.isAccepted(myString("001001101010"))
+		&& !myDFA.isAccepted(myString("001001001001")) && !myDFA.isAccepted(myString("10010001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_three_consecutive_zero_AND_strings_of_110s() {
+	cout << "********** TESTING STRING_OF_THREE_CONSECUTIVE_ZERO_AND_STRINGS_OF_110s ************\n" << endl;
+	DFA myDFA = DFA_Intersection(string_of_three_consecutive_zero, strings_of_110s);
+	if (!myDFA.isAccepted(myString("110110000")) && !myDFA.isAccepted(myString("110110110"))
+		&& !myDFA.isAccepted(myString("000")) && !myDFA.isAccepted(myString("1001001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_len_2_AND_string_that_does_not_contain_consecutive_1() {
+	cout << "********** TESTING STRING_OF_LEN_2_AND_STRING_THAT_DOES_NOT_CONTAIN_CONSECUTIVE_1 ************\n" << endl;
+	DFA myDFA = DFA_Intersection(string_of_len_2, string_that_does_not_contain_consecutive_1);
+	if (myDFA.isAccepted(myString("10")) && !myDFA.isAccepted(myString("11"))
+		&& !myDFA.isAccepted(myString("0010")) && !myDFA.isAccepted(myString("1111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_even_0_and_1_AND_string_of_three_consecutive_zero() {
+	cout << "********** TESTING STRING_OF_EVEN_0_AND_1_AND_STRING_OF_THREE_CONSECUTIVE_ZERO ************\n" << endl;
+	DFA myDFA = DFA_Intersection(string_of_even_0_and_1, string_of_three_consecutive_zero);
+	if (myDFA.isAccepted(myString("000011")) && !myDFA.isAccepted(myString("0011"))
+		&& !myDFA.isAccepted(myString("000")) && !myDFA.isAccepted(myString("1110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_even_len_AND_strings_of_110s() {
+	cout << "********** TESTING EVEN_LEN_AND_STRINGS_OF_110s ************\n" << endl;
+	DFA myDFA = DFA_Intersection(even_len, strings_of_110s);
+	if (myDFA.isAccepted(myString("110110")) && !myDFA.isAccepted(myString("10"))
+		&& !myDFA.isAccepted(myString("110110110")) && !myDFA.isAccepted(myString("1001010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_end_with_0_AND_string_of_even_0_and_1() {
+	cout << "********** TESTING STRING_END_WITH_0_AND_STRING_OF_EVEN_0_AND_1 ************\n" << endl;
+	DFA myDFA = DFA_Intersection(string_end_with_0, string_of_even_0_and_1);
+	if (myDFA.isAccepted(myString("001100")) && !myDFA.isAccepted(myString("0010"))
+		&& !myDFA.isAccepted(myString("0101")) && !myDFA.isAccepted(myString("10001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_that_only_accept_101_AND_string_end_with_0() {
+	cout << "********** TESTING STRING_THAT_ONLY_ACCEPT_101_AND_STRING_END_WITH_0 ************\n" << endl;
+	DFA myDFA = DFA_Intersection(string_that_accept_only_101, string_end_with_0);
+	if (!myDFA.isAccepted(myString("101")) && !myDFA.isAccepted(myString("1010100"))
+		&& !myDFA.isAccepted(myString("1101001101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_0s_start_and_end_with_1_AND_string_of_0s() {
+	cout << "********** TESTING STRING_OF_0s_START_AND_END_WITH_1_OR_STRING_OF_0s ************\n" << endl;
+	DFA myDFA = DFA_Intersection(string_of_0s_start_and_end_with_1, string_of_0s);
+	
+	if (!myDFA.isAccepted(myString("100000001")) && !myDFA.isAccepted(myString("11"))
+		&& !myDFA.isAccepted(myString("0000")) && !myDFA.isAccepted(myString("01001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_110s_AND_string_of_len_2() {
+	cout << "********** TESTING STRINGS_OF_110s_AND_STRING_OF_LEN_2 ************\n" << endl;
+	DFA myDFA = DFA_Intersection(strings_of_110s, string_of_len_2);
+	if (!myDFA.isAccepted(myString("11")) && !myDFA.isAccepted(myString("110110"))
+		&& !myDFA.isAccepted(myString("11101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_string_of_even_number_of_0_AND_string_of_0s_start_and_end_with_1() {
+	cout << "********** TESTING STRINGS_OF_EVEN_NUMBER_OF_0_AND_STRING_OF_0s_START_AND_END_WITH_1 ************\n" << endl;
+	DFA myDFA = DFA_Intersection(string_of_even_number_of_0, string_of_0s_start_and_end_with_1);
+	if (myDFA.isAccepted(myString("100001")) && !myDFA.isAccepted(myString("00100010"))
+		&& !myDFA.isAccepted(myString("1000001")) && !myDFA.isAccepted(myString("1110100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_that_does_not_contain_consecutive_1_AND_even_len() {
+	cout << "********** TESTING STRINGS_THAT_DOES_NOT_CONTAIN_CONSECUTIVE_1_AND_EVEN_LEN ************\n" << endl;
+	DFA myDFA = DFA_Intersection(string_that_does_not_contain_consecutive_1, even_len);
+	if (myDFA.isAccepted(myString("00101000")) && !myDFA.isAccepted(myString("110110"))
+		&& !myDFA.isAccepted(myString("0001010")) && !myDFA.isAccepted(myString("110010110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
