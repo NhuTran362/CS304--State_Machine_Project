@@ -335,3 +335,79 @@ DFA DFA_Complement(const DFA& myDFA) {
 
 	return DFA(myDFA.getState(), myDFA.getAlphabet(), myDFA.getStartState(), myDFA.getTransition(), newAcceptingstates);
 }
+
+/TASK 14
+DFA DFA_Union(const DFA& A, const DFA& B) {
+
+	vector<string> statesA = A.getState();
+	set<string> AlphabetA= A.getAlphabet();
+	string startA = A.getStartState();
+	vector<string> acceptA = A.getAcceptingState();
+	map<Pair, string> transA =A.getTransition();
+
+	vector<string> statesB = B.getState();
+	set<string> AlphabetB = B.getAlphabet();
+	string startB = B.getStartState();
+	vector<string> acceptB = B.getAcceptingState();
+	map<Pair, string> transB = B.getTransition();
+
+	if (AlphabetA != AlphabetB)
+	{
+		cout << "DFA_Union: The Two DFAs must have the same alphabet\n\n";
+		exit(-1);
+	}
+	
+	
+	vector<string> statesC;
+	set<string> AlphabetC;
+	string startC;
+	vector<string> acceptC;
+	map<Pair, string> transC;
+
+	//states
+	for(auto &each1: statesA)
+		for (auto &each2 : statesB)
+		{
+			string newState = each1 + "," + each2;
+			statesC.push_back(newState);
+		}
+
+	//start
+	startC = startA + "," + startB;
+
+	//accept 
+	for (auto &each1 : acceptA)
+		for (auto &each2 : acceptB)
+		{
+			string newState = each1 + "," + each2;
+			acceptC.push_back(newState);
+		}
+
+	//trans
+
+	for (auto &each1 : statesA)
+		for (auto &each2 : statesB)
+			for (auto &each3 : AlphabetA)
+			{
+				auto p1 = transA.find(Pair(each1, each3));
+				auto p2 = transB.find(Pair(each2, each3));
+				
+				if (p1 == transA.end() && p2 == transB.end())
+					break;
+				
+				string nextState;
+
+				if (p1 != transA.end() && p2 != transB.end())
+					nextState = transA[Pair(each1, each3)] + "," + transB[Pair(each2, each3)];
+			
+				else if (p1 == transA.end() && p2 != transB.end())
+					nextState = each1 + "," + transB[Pair(each2, each3)];
+				
+				else if (p1 != transA.end() && p2 == transB.end())
+					nextState = transA[Pair(each1, each3)] + "," + each2;
+
+				transC[Pair(each1 + "," + each2, each3)] = nextState;			
+			}
+	return DFA(statesC, AlphabetA, startC, transC, acceptC);
+
+}
