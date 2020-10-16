@@ -324,15 +324,13 @@ myString search(set<string> alphabet, map<Pair, string> transition, set<string> 
 
 //TASK 13
 DFA DFA_Complement(const DFA& myDFA) {
-	vector<string> newAcceptingstates = myDFA.getState();
+	vector<string> newAcceptingstates;
+	vector<string> states = myDFA.getState();
 	vector<string> acceptingState = myDFA.getAcceptingState();
 	
-
-	for (unsigned i = 0; i < acceptingState.size(); i++) {
-		for (auto p = newAcceptingstates.begin(); p < newAcceptingstates.end(); p++)
-			if (*p == acceptingState[i])
-				newAcceptingstates.erase(p);
-		
+	for (unsigned i = 0; i < states.size(); i++) {
+		if (find(acceptingState.begin(), acceptingState.end(), states[i]) == acceptingState.end())
+			newAcceptingstates.push_back(states[i]);
 	}
 
 	return DFA(myDFA.getState(), myDFA.getAlphabet(), myDFA.getStartState(), myDFA.getTransition(), newAcceptingstates);
