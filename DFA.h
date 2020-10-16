@@ -211,4 +211,8 @@ void test_string_that_accept_only_101_SUBSET_string_that_does_not_contain_consec
 void test_string_of_0s_SUBSET_string_that_does_not_contain_consecutive_1();
 void test_string_that_accept_only_101_SUBSET_string_of_0s_start_and_end_with_1();
 void test_string_that_does_not_contain_consecutive_1_SUBSET_even_len();
+
+
+//TASK 20
+bool DFA_Equality(const DFA& A, const DFA& B);
 #endif // !DFA_H
