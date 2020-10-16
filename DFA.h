@@ -181,5 +181,19 @@ void test_string_that_does_not_contain_consecutive_1_OR_even_len();
 //TASK 16
 DFA DFA_Intersection(const DFA&, const DFA&);
 
+//TASK 17
+void test_even_len_AND_strings_of_0s();
+void test_string_end_with_0_AND_string_of_even_number_of_0();
+void test_string_of_three_consecutive_zero_AND_strings_of_110s();
+void test_string_of_len_2_AND_string_that_does_not_contain_consecutive_1();
+void test_string_of_even_0_and_1_AND_string_of_three_consecutive_zero();
+void test_even_len_AND_strings_of_110s();
+void test_string_end_with_0_AND_string_of_even_0_and_1();
+void test_string_that_only_accept_101_AND_string_end_with_0();
+void test_string_of_0s_start_and_end_with_1_AND_string_of_0s();
+void test_string_of_110s_AND_string_of_len_2();
+void test_string_of_even_number_of_0_AND_string_of_0s_start_and_end_with_1();
+void test_string_that_does_not_contain_consecutive_1_AND_even_len();
+
 
 #endif // !DFA_H
