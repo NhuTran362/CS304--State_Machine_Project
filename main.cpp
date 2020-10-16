@@ -120,6 +120,14 @@ int main(int argc, char * argv[]) {
 	else
 		cout << "NOT PASSED\n\n";
 	
+	//test TASK 14
+	myDFA = DFA_Union(even_len, string_of_0s);
+	if (myDFA.isAccepted(myString("00000000")) && !myDFA.isAccepted(myString("01010101101100")) 
+		&& !myDFA.isAccepted(myString("0000000")) && !myDFA.isAccepted(myString("1001001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+	
 	
 	char c;
 	cin >> c;
