@@ -131,7 +131,7 @@ int main(int argc, char * argv[]) {
 	test_string_that_only_accept_101_OR_string_end_with_0();
 	test_string_of_0s_start_and_end_with_1_OR_string_of_0s();
 	test_string_of_110s_OR_string_of_len_2();
-	
+	//
 	
 	char c;
 	cin >> c;
