@@ -833,4 +833,8 @@ void test_string_that_does_not_contain_consecutive_1_SUBSET_even_len() {
 	else
 		cout << "NOT PASSED\n\n";
 }
+//TASK 20
+bool DFA_Equality(const DFA& A, const DFA& B) {
+	return DFA_Subset(A, B) && DFA_Subset(B, A);
+}
 
