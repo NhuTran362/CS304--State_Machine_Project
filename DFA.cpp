@@ -377,10 +377,17 @@ DFA DFA_Union(const DFA& A, const DFA& B) {
 
 	//accept 
 	for (auto &each1 : acceptA)
-		for (auto &each2 : acceptB)
+		for (auto &each2 : statesB)
 		{
 			string newState = each1 + "," + each2;
 			acceptC.push_back(newState);
+		}
+	for (auto &each1 : acceptB)
+		for (auto &each2 : statesA)
+		{
+			string newState = each2 + "," + each1;
+			if (find(acceptC.begin(), acceptC.end(), newState) == acceptC.end())
+			   acceptC.push_back(newState);
 		}
 
 	//trans
