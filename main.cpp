@@ -146,6 +146,21 @@ int main(int argc, char * argv[]) {
 	test_string_of_even_number_of_0_AND_string_of_0s_start_and_end_with_1();
 	test_string_that_does_not_contain_consecutive_1_AND_even_len();
 	
+	//TASK 19
+	test_even_len_SUBSET_strings_of_0s();
+	test_string_end_with_0_SUBSET_string_of_even_number_of_0();
+	test_string_of_three_consecutive_zero_SUBSET_strings_of_110s();
+	test_string_of_len_2_SUBSET_even_len();
+	test_string_of_even_0_and_1_SUBSET_string_of_even_number_of_0();
+	test_strings_of_110s_SUBSET_string_end_with_zero();
+	test_string_end_with_0_SUBSET_string_of_0s();
+	test_string_of_0s_SUBSET_string_end_with_0();
+	test_string_that_accept_only_101_SUBSET_string_that_does_not_contain_consecutive_1();
+	test_string_of_0s_SUBSET_string_that_does_not_contain_consecutive_1();
+	test_string_that_accept_only_101_SUBSET_string_of_0s_start_and_end_with_1();
+	test_string_that_does_not_contain_consecutive_1_SUBSET_even_len();
+
+	
 	char c;
 	cin >> c;
 
