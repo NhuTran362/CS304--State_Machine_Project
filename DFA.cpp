@@ -548,3 +548,77 @@ void test_string_that_does_not_contain_consecutive_1_OR_even_len() {
 	else
 		cout << "NOT PASSED\n\n";
 }
+
+//TASK 16
+DFA DFA_Intersection(const DFA& A, const DFA& B) {
+	vector<string> statesA = A.getState();
+	set<string> AlphabetA = A.getAlphabet();
+	string startA = A.getStartState();
+	vector<string> acceptA = A.getAcceptingState();
+	map<Pair, string> transA = A.getTransition();
+
+	vector<string> statesB = B.getState();
+	set<string> AlphabetB = B.getAlphabet();
+	string startB = B.getStartState();
+	vector<string> acceptB = B.getAcceptingState();
+	map<Pair, string> transB = B.getTransition();
+
+	if (AlphabetA != AlphabetB)
+	{
+		cout << "DFA_Union: The Two DFAs must have the same alphabet\n\n";
+		exit(-1);
+	}
+
+
+	vector<string> statesC;
+	set<string> AlphabetC;
+	string startC;
+	vector<string> acceptC;
+	map<Pair, string> transC;
+
+	//states
+	for (auto &each1 : statesA)
+		for (auto &each2 : statesB)
+		{
+			string newState = each1 + "," + each2;
+			statesC.push_back(newState);
+		}
+
+	//start
+	startC = startA + "," + startB;
+
+	//accept 
+	for (auto &each1 : acceptA)
+		for (auto &each2 : acceptB)
+		{
+			string newState = each1 + "," + each2;
+			acceptC.push_back(newState);
+		}
+	
+
+	//trans
+
+	for (auto &each1 : statesA)
+
+		for (auto &each2 : statesB)
+			for (auto &each3 : AlphabetA)
+			{
+				auto p1 = transA.find(Pair(each1, each3));
+				auto p2 = transB.find(Pair(each2, each3));
+
+				string nextState;
+
+				if (p1 != transA.end() && p2 != transB.end())
+					nextState = transA[Pair(each1, each3)] + "," + transB[Pair(each2, each3)];
+
+				else if (p1 == transA.end() && p2 != transB.end())
+					nextState = each1 + "," + transB[Pair(each2, each3)];
+
+				else if (p1 != transA.end() && p2 == transB.end())
+					nextState = transA[Pair(each1, each3)] + "," + each2;
+				if (nextState.size() > 0)
+					transC[Pair(each1 + "," + each2, each3)] = nextState;
+			}
+
+	return DFA(statesC, AlphabetA, startC, transC, acceptC);
+}
