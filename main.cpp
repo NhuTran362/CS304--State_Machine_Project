@@ -133,6 +133,20 @@ int main(int argc, char * argv[]) {
 	test_string_of_110s_OR_string_of_len_2();
 	//
 	
+	//TASK 17
+	test_even_len_AND_strings_of_0s();
+	test_string_end_with_0_AND_string_of_even_number_of_0();
+	test_string_of_three_consecutive_zero_AND_strings_of_110s();
+	test_string_of_len_2_AND_string_that_does_not_contain_consecutive_1();
+	test_string_of_even_0_and_1_AND_string_of_three_consecutive_zero();
+	test_even_len_AND_strings_of_110s();
+	test_string_end_with_0_AND_string_of_even_0_and_1();
+	test_string_that_only_accept_101_AND_string_end_with_0();
+	test_string_of_0s_start_and_end_with_1_AND_string_of_0s();
+	test_string_of_110s_AND_string_of_len_2();
+	test_string_of_even_number_of_0_AND_string_of_0s_start_and_end_with_1();
+	test_string_that_does_not_contain_consecutive_1_AND_even_len();
+	
 	char c;
 	cin >> c;
 
