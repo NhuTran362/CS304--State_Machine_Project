@@ -52,6 +52,26 @@ string DFA::myTransition(string state, string character) {
 	return state;
 }
 
+ostream& operator<<(ostream& OStream, const DFA& obj) {
+	OStream << "States:";
+	for (auto& each: obj.state)
+		OStream << "     " << each ;
+	OStream << endl;
+	OStream << "Alphabet:";
+	for (auto& each : obj.alphabet)
+		OStream << "     " <<each;
+	OStream << endl;
+	OStream << "Start State:" << obj.startState << endl;
+	OStream << "Transition:"<<endl;
+	for (auto& each : obj.transition)
+		OStream << each.first.first << "x" << each.first.second << "-> " << each.second << endl;
+	OStream << "Accepting State:";
+	for (auto &each : obj.acceptingState)
+		OStream << "   " << each;
+	OStream << endl;
+	return OStream;
+}
+
 // Completed TASK 7 - A function returning a DFA that accep only the string of one given character
 DFA AcceptingStringofOneCharacter(const string& oneCharacter, set<string> initAlphabet) {
 
