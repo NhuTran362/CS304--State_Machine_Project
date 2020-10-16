@@ -112,11 +112,14 @@ int main(int argc, char * argv[]) {
 	else
 		cout << "NOT PASSED\n\n";
 	
-	char c;
-	cin >> c;
-
-	return 0;
-}
+	
+	//test TASK 13
+	myDFA = DFA_Complement(even_len);
+	if (myDFA.isAccepted(myString("1011100")) && !myDFA.isAccepted(myString("00110011001110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+	
 	
 	char c;
 	cin >> c;
