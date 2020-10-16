@@ -419,9 +419,6 @@ DFA DFA_Union(const DFA& A, const DFA& B) {
 				auto p1 = transA.find(Pair(each1, each3));
 				auto p2 = transB.find(Pair(each2, each3));
 				
-				if (p1 == transA.end() && p2 == transB.end())
-					break;
-				
 				string nextState;
 
 				if (p1 != transA.end() && p2 != transB.end())
@@ -432,7 +429,7 @@ DFA DFA_Union(const DFA& A, const DFA& B) {
 				
 				else if (p1 != transA.end() && p2 == transB.end())
 					nextState = transA[Pair(each1, each3)] + "," + each2;
-
+				if (nextState.size() > 0)
 				transC[Pair(each1 + "," + each2, each3)] = nextState;			
 			}
 	return DFA(statesC, AlphabetA, startC, transC, acceptC);
