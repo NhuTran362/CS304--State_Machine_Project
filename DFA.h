@@ -178,5 +178,8 @@ void test_string_of_110s_OR_string_of_len_2();
 void test_string_of_even_number_of_0_OR_string_of_0s_start_and_end_with_1();
 void test_string_that_does_not_contain_consecutive_1_OR_even_len();
 
+//TASK 16
+DFA DFA_Intersection(const DFA&, const DFA&);
+
 
 #endif // !DFA_H
