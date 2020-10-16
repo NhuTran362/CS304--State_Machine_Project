@@ -120,13 +120,17 @@ int main(int argc, char * argv[]) {
 	else
 		cout << "NOT PASSED\n\n";
 	
-	//test TASK 14
-	myDFA = DFA_Union(even_len, string_of_0s);
-	if (myDFA.isAccepted(myString("00000000")) && myDFA.isAccepted(myString("01010101101100")) 
-		&& myDFA.isAccepted(myString("0000000")) && !myDFA.isAccepted(myString("1001001")))
-		cout << "PASSED\n\n";
-	else
-		cout << "NOT PASSED\n\n";
+	//TASK 15
+	test_even_len_OR_strings_of_0s();
+	test_string_end_with_0_OR_string_of_even_number_of_0();
+	test_string_of_three_consecutive_zero_OR_strings_of_110s();
+	test_string_of_len_2_OR_string_that_does_not_contain_consecutive_1();
+	test_string_of_even_0_and_1_OR_string_of_three_consecutive_zero();
+	test_even_len_OR_strings_of_110s();
+	test_string_end_with_0_OR_string_of_even_0_and_1();
+	test_string_that_only_accept_101_OR_string_end_with_0();
+	test_string_of_0s_start_and_end_with_1_OR_string_of_0s();
+	test_string_of_110s_OR_string_of_len_2();
 	
 	
 	char c;
