@@ -159,4 +159,7 @@ myString search(set<string> alphabet, map<Pair, string> transition, set<string> 
 
 DFA DFA_Complement(const DFA&);
 
+//TASK 14
+DFA DFA_Union(const DFA&, const DFA&);
+
 #endif // !DFA_H
