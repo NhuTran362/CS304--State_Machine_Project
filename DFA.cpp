@@ -225,7 +225,7 @@ void test_DFA_string_that_accept_only_101() {
 	return;
 }
 
-void test_string_that_does_not_contain_consecutive_1() {
+void test_DFA_string_that_does_not_contain_consecutive_1() {
 	cout << "********** TESTING DFA STRING_THAT_DOES_NOT_CONTAIN_CONSECUTIVE_1 ************\n" << endl;
 
 	if (!string_that_does_not_contain_consecutive_1.isAccepted(myString("0001100010")) && !string_that_does_not_contain_consecutive_1.isAccepted(myString("010011100")) && string_that_does_not_contain_consecutive_1.isAccepted(myString("1010001001")) && string_that_does_not_contain_consecutive_1.isAccepted(myString("10101010")))
@@ -348,7 +348,7 @@ DFA DFA_Complement(const DFA& myDFA) {
 	return DFA(myDFA.getState(), myDFA.getAlphabet(), myDFA.getStartState(), myDFA.getTransition(), newAcceptingstates);
 }
 
-/TASK 14
+//TASK 14
 DFA DFA_Union(const DFA& A, const DFA& B) {
 
 	vector<string> statesA = A.getState();
