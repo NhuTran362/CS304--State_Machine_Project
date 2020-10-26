@@ -1,3 +1,6 @@
+#ifndef MYSTRING_H_
+#define MYSTRING_H_
+
 #include<iostream>
 #include<string>
 #include<set>
