@@ -3,6 +3,7 @@
 
 #include "myString.h"
 #include <map>
+#include <list>
 using namespace std;
 
 typedef pair<string, string> Pair;
