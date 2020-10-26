@@ -1,4 +1,4 @@
-#include "myString.cpp"
+#include "DFA.h"
 
 int main(int argc, char * argv[]) {
 
