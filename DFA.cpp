@@ -306,16 +306,10 @@ myString  returnAcceptedString(const DFA& inputDFA) {
 }
 
 myString search(set<string> alphabet, map<Pair, string> transition, set<string> visited, int totalStates, string current, myString result, vector<string> acceptingStates) {
-	//cout << "\nSEARCH CALL: \n";
-	//cout << result << endl;
-	//cout << "current state: " << current << endl;
-	//cout << "visit.size: "<< visited.size() << " totalStates: " << totalStates << endl;
 	
 	if (find(acceptingStates.begin(), acceptingStates.end(), current) != acceptingStates.end())
-	{
-		///cout << "Return result at the begining\n";
 		return result;
-	}
+	
 	for (auto p = alphabet.begin(); p != alphabet.end(); p++)
 	{
 		auto p1 = transition.find(Pair(current, *p));
@@ -332,12 +326,10 @@ myString search(set<string> alphabet, map<Pair, string> transition, set<string> 
 
 			if (search(alphabet, transition, newVisited, totalStates, p1->second, newResult, acceptingStates) != myString("false"))
 			{
-				//cout << "return newresult\n";
 				return search(alphabet, transition, newVisited, totalStates, p1->second, newResult, acceptingStates);
 			}
 		}
 	}
-	//cout << "return false when out of loop\n";
 	return myString("false");
 
 }
