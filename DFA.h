@@ -80,7 +80,7 @@ public:
 	}
 	/*******************************************************************/
   
-  }
+  };
   
 DFA AcceptingStringofOneCharacter(const string& oneCharacter, set<string> initAlphabet);
 // Completed TASK 5 - DFA Accepting no String
