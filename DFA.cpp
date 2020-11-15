@@ -830,3 +830,78 @@ bool DFA_Equality(const DFA& A, const DFA& B) {
 	return DFA_Subset(A, B) && DFA_Subset(B, A);
 }
 
+//TASK 21
+void test_even_len_EQUAL_strings_of_0s() {
+	if (!DFA_Equality(even_len, string_of_0s))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_end_with_0_EQUAL_string_of_even_number_of_0() {
+	if (!DFA_Equality(string_end_with_0, string_of_even_number_of_0))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_three_consecutive_zero_EQUAL_strings_of_110s() {
+	if (!DFA_Equality(string_of_three_consecutive_zero, strings_of_110s))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_len_2_EQUAL_even_len() {
+	if (!DFA_Equality(string_of_len_2, even_len))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_even_0_and_1_EQUAL_string_of_even_number_of_0() {
+	if (!DFA_Equality(string_of_even_0_and_1, string_of_even_number_of_0))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_strings_of_110s_EQUAL_string_end_with_zero() {
+	if (!DFA_Equality(strings_of_110s, string_end_with_0))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_end_with_0_EQUAL_string_of_0s() {
+	if (!DFA_Equality(string_end_with_0, string_of_0s))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_0s_EQUAL_string_of_0s() {
+	if (DFA_Equality(string_of_0s, string_of_0s))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_even_0_and_1_EQUAL_even_len() {
+	if (!DFA_Equality(string_of_even_0_and_1, even_len))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void string_that_does_not_contain_consecutive_1_EQUAL_string_that_does_not_contain_consecutive_1() {
+	if (DFA_Equality(string_that_does_not_contain_consecutive_1, string_that_does_not_contain_consecutive_1))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_that_accept_only_101_EQUAL_string_that_accept_only_101() {
+	if (DFA_Equality(string_that_accept_only_101, string_that_accept_only_101))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_string_of_len_2_EQUAL_Intersection_of_len_2_and_even_len() {
+	if (DFA_Equality(string_of_len_2, DFA_Intersection(string_of_len_2, even_len)))
+		cout << "PASSED\n";
+	else
+		cout << "NOT PASSED\n";
+}
+
+
