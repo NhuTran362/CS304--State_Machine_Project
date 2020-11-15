@@ -32,3 +32,18 @@ set<string> NFA::myTransition(string state, string character) {
 
 	return currentState;
 }
+
+// TASK 24
+void NFA::operator=(const DFA &dfa) {
+	state = dfa.getState();
+	alphabet = dfa.getAlphabet();
+	startState = dfa.getStartState();
+	acceptingState = dfa.getAcceptingState();
+	stateNum = dfa.getStateNum();
+	alphabetSize = dfa.getAlphabetSize();
+	acceptingState_num = dfa.getAcceptingState_num();
+
+	map<Pair, string> T = dfa.getTransition();
+	for (auto each : T)
+		transition[each.first] = set<string>{ each.second };
+}
