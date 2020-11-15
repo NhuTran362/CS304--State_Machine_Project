@@ -15,9 +15,9 @@ NFA::NFA(const NFA& initNFA) {
 }
 set<string> NFA::myTransition(string state, string character) {
 
-	set<string> currentState = { state };
+	set<string> empty = {};
 	if (transition.empty())
-		return currentState;
+		return empty;
 	
 	if (character == "")
 		character = "EPSILON";
@@ -30,7 +30,7 @@ set<string> NFA::myTransition(string state, string character) {
 		return temp->second;
 	}
 
-	return currentState;
+	return empty;
 }
 
 // TASK 24
