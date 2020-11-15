@@ -43,6 +43,9 @@ public:
 	map<Pair, set<string>> getTransition()const { return transition; }
 
 	set<string> myTransition(string state, string character);
+	
+	//TASK 24
+	void operator=(const DFA &dfa);
 };
 #endif // !_NFA_H_
 
