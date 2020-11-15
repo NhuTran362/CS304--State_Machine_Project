@@ -173,6 +173,22 @@ int main(int argc, char * argv[]) {
 	test_string_that_accept_only_101_EQUAL_string_that_accept_only_101();
 	test_string_of_len_2_EQUAL_Intersection_of_len_2_and_even_len();
 	
+	/TASK 22
+	static DFA odd_len(vector<string> { "0", "1" }, set<string> {"0", "1"}, "0", map<Pair, string> { {Pair("0", "0"), "1"}, { Pair("0", "1"), "1" }, { Pair("1", "0"), "0" }, { Pair("1", "1"), "0" }}, { "1" });
+	if(DFA_Equality(odd_len, DFA_Complement(even_len)))
+		cout <<"DFA_Complement works!"<<endl;
+	else 
+		cout << "DFA_Complement does not work!" << endl;
+	
+	if (DFA_Equality(string_end_with_0, DFA_Union(strings_of_110s,string_end_with_0)))
+		cout << "DFA_Union works!" << endl;
+	else
+		cout << "DFA_Union does not work!" << endl;
+	if (DFA_Equality(DFA_Intersection(string_of_0s, string_of_even_number_of_0), DFA_Intersection(DFA_Intersection(string_of_0s, string_of_even_number_of_0), string_of_even_0_and_1)))
+		cout << "DFA_Intersection works!" << endl;
+	else
+		cout << "DFA_Intersection does not work!" << endl;
+	
 	char c;
 	cin >> c;
 
