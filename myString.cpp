@@ -81,14 +81,14 @@ void myString::operator=(const myString& copiedOjb) {
 }
 
 bool myString::operator==(const myString& obj) {
-	if (alphabet == obj.alphabet && _string == obj._string && alphabetSize == obj.alphabetSize && _stringLen == obj._stringLen)
+	if ((isSubSet(alphabet,obj.alphabet)|| isSubSet(obj.alphabet, alphabet)) && _string == obj._string)
 		return true;
 	return false;
 
 }
 
 bool myString::operator!=(const myString& obj) {
-	if (alphabet != obj.alphabet || _string != obj._string || alphabetSize != obj.alphabetSize || _stringLen != obj._stringLen)
+	if (!(isSubSet(alphabet, obj.alphabet) || isSubSet(obj.alphabet, alphabet)) || _string != obj._string ||_stringLen != obj._stringLen)
 		return true;
 	return false;
 
@@ -199,6 +199,9 @@ void myString::pop_front() {
 
 		_stringLen--;
 	}
+	
+	if (_stringLen == 0)
+		_string.push_back("EPSILON");
 }
 
 void myString::push_back(string newCharacter) {
