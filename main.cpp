@@ -380,6 +380,70 @@ int main(int argc, char * argv[]) {
 		else
 			cout << "TEST 4 NOT PASSED\n\n";
 	
+	//TASK 35
+		cout << "TEST FOR TASKS 35: \n";
+		if (NFA_Backtracking(NFA_Concat(NFA_10s,NFA_0s), myString("10101000000")))
+			cout << "TEST 1 PASSED\n\n";
+		else
+			cout << "TEST 1 NOT PASSED\n\n";
+		if (NFA_Backtracking(NFA_Concat(NFA_substring_1110, NFA_10s), myString("011101010")))
+			cout << "TEST 2 PASSED\n\n";
+		else
+			cout << "TEST 2 NOT PASSED\n\n";
+
+		if (NFA_Backtracking(NFA_Concat(NFA_10, NFA_1s_or_end_0), myString("1011111")))
+			cout << "TEST 3 PASSED\n\n";
+		else
+			cout << "TEST 3 NOT PASSED\n\n";
+
+		if (NFA_Backtracking(NFA_Concat(NFA_11_00, NFA_non_empty_even_len), myString("110011")))
+			cout << "TEST 4 PASSED\n\n";
+		else
+			cout << "TEST 4 NOT PASSED\n\n";
+
+		if (NFA_Backtracking(NFA_Concat(NFA_11_00, NFA_non_empty_even_len), myString("110011")))
+			cout << "TEST 4 PASSED\n\n";
+		else
+			cout << "TEST 4 NOT PASSED\n\n";
+
+		if (!NFA_Backtracking(NFA_Concat(NFA_11_00, NFA_non_empty_even_len), myString("EPSILON")))
+			cout << "TEST 5 PASSED\n\n";
+		else
+			cout << "TEST 5 NOT PASSED\n\n";
+
+		if (NFA_Backtracking(NFA_Concat(NFA_11_00, NFA_non_empty_even_len), myString("110000")))
+			cout << "TEST 6 PASSED\n\n";
+		else
+			cout << "TEST 6 NOT PASSED\n\n";
+
+		if (NFA_Backtracking(NFA_Concat(NFA_third_0, NFA_end_01), myString("000001")))
+			cout << "TEST 7 PASSED\n\n";
+		else
+			cout << "TEST 7 NOT PASSED\n\n";
+
+		if (NFA_Backtracking(NFA_Concat(NFA_0s, NFA_end_01), myString("000001")))
+			cout << "TEST 8 PASSED\n\n";
+		else
+			cout << "TEST 8 NOT PASSED\n\n";
+		if (NFA_Backtracking(NFA_Concat(NFA_end_01, NFA_0s), myString("000001000")))
+			cout << "TEST 9 PASSED\n\n";
+		else
+			cout << "TEST 9 NOT PASSED\n\n";
+		if (NFA_Backtracking(NFA_Concat(NFA_10, NFA_empty_string), myString("10")))
+			cout << "TEST 10 PASSED\n\n";
+		else
+			cout << "TEST 10 NOT PASSED\n\n";
+		if (NFA_Backtracking(NFA_Concat(NFA_0s, NFA_10), myString("00000010")))
+			cout << "TEST 11 PASSED\n\n";
+		else
+			cout << "TEST 11 NOT PASSED\n\n";
+
+		if (NFA_Backtracking(NFA_Concat(NFA_end_01, NFA_10), myString("0110")))
+			cout << "TEST 12 PASSED\n\n";
+		else
+			cout << "TEST 12 NOT PASSED\n\n";
+
+	
 	char c;
 	cin >> c;
 
