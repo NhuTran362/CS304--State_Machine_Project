@@ -599,3 +599,1229 @@ trace_tree explore(const NFA& n, myString w, string q) {
 	return tree;
 	
 }
+//TASK 31
+//test for NFA_11_00
+void test_NFA_11_00_1() {
+	cout << "\n\nNFA_11_00 TEST 1: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("101100"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_2() {
+	cout << "NFA_11_00 TEST 2: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("0110011"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+
+}
+void test_NFA_11_00_3() {
+	cout << "NFA_11_00 TEST 3: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("0111101"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_4() {
+	cout << "NFA_11_00 TEST 4: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("0101"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_5() {
+	cout << "NFA_11_00 TEST 5: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("000"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n ";
+}
+void test_NFA_11_00_6() {
+	cout << "NFA_11_00 TEST 6: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("1000"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_7() {
+	cout << "NFA_11_00 TEST 7: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("0111100"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n ";
+}
+void test_NFA_11_00_8() {
+	cout << "NFA_11_00 TEST 8: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("1100"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_9() {
+	cout << "NFA_11_00 TEST 9: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("0011"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_10() {
+	cout << "NFA_11_00 TEST 10: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("0"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_11() {
+	cout << "NFA_11_00 TEST 11: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("EPSILON"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_12() {
+	cout << "NFA_11_00 TEST 12: ";
+	trace_tree test = NFA_Forking(NFA_11_00, myString("10000"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_end_01_1() {
+	cout << "\n\nNFA_end_01 TEST 1: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("01"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_2() {
+	cout << "NFA_end_01 TEST 2: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("001"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_3() {
+	cout << "NFA_end_01 TEST 3: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("0"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_4() {
+	cout << "NFA_end_01 TEST 4: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("1"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_5() {
+	cout << "NFA_end_01 TEST 5: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("EPSILON"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_6() {
+	cout << "NFA_end_01 TEST 6: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("101"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_7() {
+	cout << "NFA_end_01 TEST 7: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("1101"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_8() {
+	cout << "NFA_end_01 TEST 8: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("10"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_9() {
+	cout << "NFA_end_01 TEST 9: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("010"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_10() {
+	cout << "NFA_end_01 TEST 10: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("1110"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_11() {
+	cout << "NFA_end_01 TEST 11: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("0101"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_12() {
+	cout << "NFA_end_01 TEST 12: ";
+	trace_tree test = NFA_Forking(NFA_end_01, myString("11"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+//test for NFA_third_0
+void test_NFA_third_0_1() {
+	cout << "\n\nNFA_third_0_11 TEST 1: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("11"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_2() {
+	cout << "NFA_third_0_11 TEST 2: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("011"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_third_0_3() {
+	cout << "NFA_third_0_11 TEST 3: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("1011"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_4() {
+	cout << "NFA_third_0_11 TEST 4: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("111"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_5() {
+	cout << "NFA_third_0_11 TEST 5: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("10011"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_third_0_6() {
+	cout << "NFA_third_0_11 TEST 6: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("EPSILON"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_7() {
+	cout << "NFA_third_0_11 TEST 7: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("1100"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_8() {
+	cout << "NFA_third_0_11 TEST 8: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("0000"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_third_0_9() {
+	cout << "NFA_third_0_11 TEST 9: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("1"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_10() {
+	cout << "NFA_third_0_11 TEST 10: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("0"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_third_0_11() {
+	cout << "NFA_third_0_11 TEST 11: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("01001"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_12() {
+	cout << "NFA_third_0_11 TEST 12: ";
+	trace_tree test = NFA_Forking(NFA_third_0, myString("01110"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+
+//test for NFA_substring_1110
+void test_NFA_substring_1110_1() {
+	{
+		cout << "\n\nNFA_substring_1110 TEST 1: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("1110"));
+		if (test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+
+void test_NFA_substring_1110_2() {
+	{
+		cout << "NFA_substring_1110 TEST 2: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("11100"));
+		if (test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+
+void test_NFA_substring_1110_3() {
+	{
+		cout << "NFA_substring_1110 TEST 3: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("01110"));
+		if (test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_4() {
+	{
+		cout << "NFA_substring_1110 TEST 4: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("11110"));
+		if (test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+
+void test_NFA_substring_1110_5() {
+	{
+		cout << "NFA_substring_1110 TEST 5: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("11101"));
+		if (test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+
+void test_NFA_substring_1110_6() {
+	{
+		cout << "NFA_substring_1110 TEST 6: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("1111101"));
+		if (test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+
+void test_NFA_substring_1110_7() {
+	{
+		cout << "NFA_substring_1110 TEST 7: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("1"));
+		if (!test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+
+void test_NFA_substring_1110_8() {
+	{
+		cout << "NFA_substring_1110 TEST 8: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("0"));
+		if (!test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+
+void test_NFA_substring_1110_9() {
+	{
+		cout << "NFA_substring_1110 TEST 9: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("EPSILON"));
+		if (!test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_10() {
+	{
+		cout << "NFA_substring_1110 TEST 10: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("11"));
+		if (!test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_11() {
+	{
+		cout << "NFA_substring_1110 TEST 11: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("111"));
+		if (!test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+
+void test_NFA_substring_1110_12() {
+	{
+		cout << "NFA_substring_1110 TEST 12: ";
+		trace_tree test = NFA_Forking(NFA_substring_1110, myString("1010"));
+		if (!test.accepted)
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+
+//test for NFA_10s
+void test_NFA_10s_1() {
+	cout << "\n\nNFA_10s TEST 1: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("10"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_10s_2() {
+	cout << "NFA_10s TEST 2: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("1010"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_10s_3() {
+	cout << "NFA_10s TEST 3: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("101010"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_10s_4() {
+	cout << "NFA_10s TEST 4: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("0"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_10s_5() {
+	cout << "NFA_10s TEST 5: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("1"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_10s_6() {
+	cout << "NFA_10s TEST 6: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("00"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_10s_7() {
+	cout << "NFA_10s TEST 7: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("01"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_8() {
+	cout << "NFA_10s TEST 8: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("11"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_10s_9() {
+	cout << "NFA_10s TEST 9: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("000"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_10() {
+	cout << "NFA_10s TEST 10: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("010"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_11() {
+	cout << "NFA_10s TEST 11: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("1000"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_10s_12() {
+	cout << "NFA_10s TEST 12: ";
+	trace_tree test = NFA_Forking(NFA_10s, myString("10010"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+//test for NFA_empty_string
+void test_NFA_empty_string_1() {
+	cout << "\n\nNFA_empty_string TEST 1: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("EPSILON"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_2() {
+	cout << "NFA_empty_string TEST 2: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("0"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_3() {
+	cout << "NFA_empty_string TEST 3: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("1"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_4() {
+	cout << "NFA_empty_string TEST 4: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("00"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_5() {
+	cout << "NFA_empty_string TEST 5: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("01"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_empty_string_6() {
+	cout << "NFA_empty_string TEST 6: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("000"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_empty_string_7() {
+	cout << "NFA_empty_string TEST 7: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("010"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_8() {
+	cout << "NFA_empty_string TEST 8: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("110"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_empty_string_9() {
+	cout << "NFA_empty_string TEST 9: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("0000"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_10() {
+	cout << "NFA_empty_string TEST 10: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("01000"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_11() {
+	cout << "NFA_empty_string TEST 11: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("11110"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_12() {
+	cout << "NFA_empty_string TEST 12: ";
+	trace_tree test = NFA_Forking(NFA_empty_string, myString("100101"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+//test for NFA_nonempty_string
+void test_NFA_nonempty_string_1() {
+	cout << "\n\nNFA_nonempty_string TEST 1: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("EPSILON"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_nonempty_string_2() {
+	cout << "NFA_nonempty_string TEST 2: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("0"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_nonempty_string_3() {
+	cout << "NFA_nonempty_string TEST 3: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("1"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_nonempty_string_4() {
+	cout << "NFA_nonempty_string TEST 5: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("10"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_nonempty_string_5() {
+	cout << "NFA_nonempty_string TEST 5: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("11"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_nonempty_string_6() {
+	cout << "NFA_nonempty_string TEST 6: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("100"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_nonempty_string_7() {
+	cout << "NFA_nonempty_string TEST 7: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("101"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_nonempty_string_8() {
+	cout << "NFA_nonempty_string TEST 8: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("110"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_nonempty_string_9() {
+	cout << "NFA_nonempty_string TEST 9: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("111"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_nonempty_string_10() {
+	cout << "NFA_nonempty_string TEST 10: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("1000"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_11() {
+	cout << "NFA_nonempty_string TEST 11: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("1001"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_nonempty_string_12() {
+	cout << "NFA_nonempty_string TEST 12: ";
+	trace_tree test = NFA_Forking(NFA_nonempty_string, myString("1111"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+//test for NFA_10
+void test_NFA_10_1() {
+	cout << "\n\nNFA_10 TEST 1: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("10"));
+	if (test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_10_2() {
+	cout << "NFA_10 TEST 2: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("1011"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_3() {
+	cout << "NFA_10 TEST 3: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("011"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_4() {
+	cout << "NFA_10 TEST 4: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("1010"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_5() {
+	cout << "NFA_10 TEST 5: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("101"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_6() {
+	cout << "NFA_10 TEST 6: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("000"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_7() {
+	cout << "NFA_10 TEST 7: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("100"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_8() {
+	cout << "NFA_10 TEST 8: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("11"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_9() {
+	cout << "NFA_10 TEST 9: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("01"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_10() {
+	cout << "NFA_10 TEST 10: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("00"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_11() {
+	cout << "NFA_10 TEST 11: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("EPSILON"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_12() {
+	cout << "NFA_10 TEST 12: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("1"));
+	if (!test.accepted)
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+//test for NFA_non_empty_even_len
+void test_NFA_non_empty_even_len_1() {
+	cout << "\n\nNFA_non_empty_even_len TEST 1: ";
+	if(NFA_Backtracking(NFA_non_empty_even_len, myString("10")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_2() {
+	cout << "NFA_non_empty_even_len TEST 2: ";
+	if (NFA_Backtracking(NFA_non_empty_even_len, myString("1000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_3() {
+	cout << "NFA_non_empty_even_len TEST 3: ";
+	if (NFA_Backtracking(NFA_non_empty_even_len, myString("11")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_4() {
+	cout << "NFA_non_empty_even_len TEST 4: ";
+	if (NFA_Backtracking(NFA_non_empty_even_len, myString("00")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_5() {
+	cout << "NFA_non_empty_even_len TEST 5: ";
+	if (NFA_Backtracking(NFA_non_empty_even_len, myString("1000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_6() {
+	cout << "NFA_non_empty_even_len TEST 6: ";
+	if (NFA_Backtracking(NFA_non_empty_even_len, myString("1001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_7() {
+	cout << "NFA_non_empty_even_len TEST 7: ";
+	if (!NFA_Backtracking(NFA_non_empty_even_len, myString("EPSILON")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_8() {
+	cout << "NFA_non_empty_even_len TEST 8: ";
+	if (!NFA_Backtracking(NFA_non_empty_even_len, myString("100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_9() {
+	cout << "NFA_non_empty_even_len TEST 9: ";
+	if (!NFA_Backtracking(NFA_non_empty_even_len, myString("1")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_10() {
+	cout << "NFA_non_empty_even_len TEST 10: ";
+	if (!NFA_Backtracking(NFA_non_empty_even_len, myString("0")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_11() {
+	cout << "NFA_non_empty_even_len TEST 11: ";
+	if (!NFA_Backtracking(NFA_non_empty_even_len, myString("000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_12() {
+	cout << "NFA_non_empty_even_len TEST 12: ";
+	if (!NFA_Backtracking(NFA_non_empty_even_len, myString("01011")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+
+//test for NFA_0s
+void test_NFA_0s_1() {
+	cout << "\n\nNFA_0s TEST 1: ";
+	if (NFA_Backtracking(NFA_0s, myString("0")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_2() {
+	cout << "NFA_0s TEST 2: ";
+	if (NFA_Backtracking(NFA_0s, myString("00000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_3() {
+	cout << "NFA_0s TEST 3: ";
+	if (NFA_Backtracking(NFA_0s, myString("000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_4() {
+	cout << "NFA_0s TEST 4: ";
+	if (NFA_Backtracking(NFA_0s, myString("0000000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_5() {
+	cout << "NFA_0s TEST 5: ";
+	if (!NFA_Backtracking(NFA_0s, myString("01")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_6() {
+	cout << "NFA_0s TEST 6: ";
+	if (!NFA_Backtracking(NFA_0s, myString("010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_7() {
+	cout << "NFA_0s TEST 7: ";
+	if (!NFA_Backtracking(NFA_0s, myString("01110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_8(){
+	cout << "NFA_0s TEST 8: ";
+	if (!NFA_Backtracking(NFA_0s, myString("111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_9() {
+	cout << "NFA_0s TEST 9: ";
+	if (!NFA_Backtracking(NFA_0s, myString("1111111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_10() {
+	cout << "NFA_0s TEST 10: ";
+	if (!NFA_Backtracking(NFA_0s, myString("01010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_11() {
+	cout << "NFA_0s TEST 11: ";
+	if (!NFA_Backtracking(NFA_0s, myString("000111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_12() {
+	
+		cout << "NFA_0s TEST 12: ";
+		if (!NFA_Backtracking(NFA_0s, myString("1111111")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	
+}
+
+//test for NFA_0s_or_01s
+void test_NFA_0s_or_01s_1() {
+	cout << "\n\nNFA_0s_or_01s TEST 1: ";
+	if (NFA_Backtracking(NFA_0s_or_01s, myString("000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_0s_or_01s_2() {
+	cout << "NFA_0s_or_01s TEST 2: ";
+	if (NFA_Backtracking(NFA_0s_or_01s, myString("0101010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_3() {
+	cout << "NFA_0s_or_01s TEST 3: ";
+	if (NFA_Backtracking(NFA_0s_or_01s, myString("00000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_4() {
+	cout << "\n\nNFA_0s_or_01s TEST 4: ";
+	if (NFA_Backtracking(NFA_0s_or_01s, myString("0101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_5() {
+	cout << "NFA_0s_or_01s TEST 5: ";
+	if (NFA_Backtracking(NFA_0s_or_01s, myString("00000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_6() {
+	cout << "NFA_0s_or_01s TEST 6: ";
+	if (NFA_Backtracking(NFA_0s_or_01s, myString("101010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_0s_or_01s_7() {
+	cout << "NFA_0s_or_01s TEST 7: ";
+	if (!NFA_Backtracking(NFA_0s_or_01s, myString("10000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_0s_or_01s_8() {
+	cout << "NFA_0s_or_01s TEST 8: ";
+	if (!NFA_Backtracking(NFA_0s_or_01s, myString("10100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_0s_or_01s_9() {
+	cout << "NFA_0s_or_01s TEST 9: ";
+	if (!NFA_Backtracking(NFA_0s_or_01s, myString("10000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_0s_or_01s_10() {
+	cout << "NFA_0s_or_01s TEST 10: ";
+	if (!NFA_Backtracking(NFA_0s_or_01s, myString("1")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_0s_or_01s_11() {
+	cout << "NFA_0s_or_01s TEST 11: ";
+	if (!NFA_Backtracking(NFA_0s_or_01s, myString("11000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_12() {
+	cout << "NFA_0s_or_01s TEST 12: ";
+	if (!NFA_Backtracking(NFA_0s_or_01s, myString("100001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+
+//test for NFA_1s_or_end_0
+void test_NFA_1s_or_end_0_1() {
+	cout << "\n\nNFA_1s_or_end_0 TEST 1: ";
+	if (NFA_Backtracking(NFA_1s_or_end_0, myString("11")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_2() {
+	cout << "NFA_1s_or_end_0 TEST 2: ";
+	if (NFA_Backtracking(NFA_1s_or_end_0, myString("110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_3() {
+	cout << "NFA_1s_or_end_0 TEST 2: ";
+	if (NFA_Backtracking(NFA_1s_or_end_0, myString("11000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_4() {
+	cout << "NFA_1s_or_end_0 TEST 4: ";
+	if (NFA_Backtracking(NFA_1s_or_end_0, myString("111111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_5() {
+	cout << "NFA_1s_or_end_0 TEST 5: ";
+	if (NFA_Backtracking(NFA_1s_or_end_0, myString("000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+void test_NFA_1s_or_end_0_6() {
+	cout << "NFA_1s_or_end_0 TEST 6: ";
+	if (NFA_Backtracking(NFA_1s_or_end_0, myString("10")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_7() {
+	cout << "NFA_1s_or_end_0 TEST 7: ";
+	if (!NFA_Backtracking(NFA_1s_or_end_0, myString("0101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_8() {
+	cout << "NFA_1s_or_end_0 TEST 8: ";
+	if (!NFA_Backtracking(NFA_1s_or_end_0, myString("100001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_9() {
+	cout << "NFA_1s_or_end_0 TEST 9: ";
+	if (!NFA_Backtracking(NFA_1s_or_end_0, myString("0101001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_10() {
+	cout << "NFA_1s_or_end_0 TEST 10: ";
+	if (!NFA_Backtracking(NFA_1s_or_end_0, myString("11101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_11() {
+	cout << "NFA_1s_or_end_0 TEST 11: ";
+	if (!NFA_Backtracking(NFA_1s_or_end_0, myString("0001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_12() {
+	cout << "NFA_1s_or_end_0 TEST 12: ";
+	if (!NFA_Backtracking(NFA_1s_or_end_0, myString("1101001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+//TASK 32
+bool NFA_Backtracking(NFA obj, myString s) {
+
+	return NFA_search(obj, obj.getAcceptingState(), s, obj.getStartState());
+}
+bool NFA_search(NFA obj, vector<string> acceptedStates, myString w, string currentState)
+{
+	map<Pair, set<string>> T = obj.getTransition();
+	string a = w.getCharacterAt(0);
+	set<string> nextState = obj.myTransition(currentState, a);
+	list <pair<string, trace_tree*>> branch;
+	bool v = false;
+	if (nextState.empty())
+		return false;
+	if (w.getStringLen() == 0) {
+		for (auto &each : nextState) {
+			if (find(acceptedStates.begin(), acceptedStates.end(), each) != acceptedStates.end())
+				return true;
+			return false;
+		}
+		w.pop_front();
+		for (auto &p1 : nextState)
+			if (NFA_search(obj, acceptedStates, w, p1))
+				return NFA_search(obj, acceptedStates, w, p1);
+	}
+}
+
+
