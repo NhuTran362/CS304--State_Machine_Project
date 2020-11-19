@@ -306,13 +306,16 @@ public:
 			for (auto &each : obj.branches)
 				branches.push_back(each);
 		}
-	}
-	
-	
+	}	
 	bool accepted;
 	string q;
 	list<pair<string, trace_tree*>> branches ;
 
 };
+
+//TASK 30 
+trace_tree NFA_Forking(const NFA& n, myString w);
+trace_tree explore(const NFA& n, myString w, string q);
+
 #endif // !_NFA_H_
 
