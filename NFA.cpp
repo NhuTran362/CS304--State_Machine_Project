@@ -1824,4 +1824,97 @@ bool NFA_search(NFA obj, vector<string> acceptedStates, myString w, string curre
 	}
 }
 
+//TASK 33
+NFA NFA_Union(const NFA& A, const NFA& B) {
+	if (A.getAlphabet() != B.getAlphabet())
+		throw invalid_argument("NFA_Union: Alphabet error");
+	//state
+	vector<string> stateA = A.getState();
+	vector<string> stateB = B.getState();
+	vector<string> stateC;
+
+	for (auto &each : stateA)
+		stateC.push_back("0" + each);
+	for (auto &each : stateB)
+		stateC.push_back("1" + each);
+	stateC.push_back("finalState");
+	string startC = "Start";
+	stateC.push_back(startC);
+	map<Pair, set<string>> T_A = A.getTransition();
+	map<Pair, set<string>> T_B = B.getTransition();
+	map<Pair, set<string>> T_C;
+	T_C[{startC, "EPSILON"}] = { "0" + A.getStartState(), "1" + B.getStartState() };
+
+	for (auto &each : T_A)
+	{
+		for (auto &each1 : each.second) {
+			T_C[{"0" + each.first.first, each.first.second}].insert("0" + each1);
+		}
+	}
+
+	for (auto &each : T_B)
+	{
+		for (auto &each1 : each.second) {
+			T_C[{"1" + each.first.first, each.first.second}].insert("1" + each1);
+		}
+	}
+
+	vector<string> F_A = A.getAcceptingState();
+	vector<string> F_B = B.getAcceptingState();
+	vector<string> F_C = { "finalState" };
+	for (auto &each : F_A) {
+		T_C[{"0" + each, "EPSILON"}].insert("finalState");
+		F_C.push_back("0" + each);
+	}
+	for (auto &each : F_B) {
+		F_C.push_back("1" + each);
+		T_C[{"1" + each, "EPSILON"}].insert("finalState");
+	}
+	return NFA(stateC, A.getAlphabet(), startC, T_C, F_C);
+}
+
+
+//TASK 34
+NFA NFA_Concat(const NFA& A, const NFA&B) {
+	vector<string> stateA = A.getState();
+	vector<string> stateB = B.getState();
+	vector<string> stateC;
+
+	for (auto &each : stateA)
+		stateC.push_back("0" + each);
+	for (auto &each : stateB)
+		stateC.push_back("1" + each);
+
+	string startC = "0" + A.getStartState();
+	
+
+	map<Pair, set<string>> T_A = A.getTransition();
+	map<Pair, set<string>> T_B = B.getTransition();
+	map<Pair, set<string>> T_C;
+
+	for (auto &each : T_A)
+	{
+		for (auto &each1 : each.second) {
+			T_C[{"0" + each.first.first, each.first.second}].insert("0" + each1);
+		}
+	}
+
+	for (auto &each : T_B)
+	{
+		for (auto &each1 : each.second) {
+			T_C[{"1" + each.first.first, each.first.second}].insert("1" + each1);
+		}
+	}
+
+	vector<string> F_A = A.getAcceptingState();
+	vector<string> F_B = B.getAcceptingState();
+	vector<string> F_C;
+	for (auto&each : F_A)
+		T_C[{"0" + each, "EPSILON" }].insert( "1" + B.getStartState());
+	for (auto&each : F_B)
+		F_C.push_back("1" + each);
+
+	return NFA(stateC, A.getAlphabet(), startC, T_C, F_C);
+}
+
 
