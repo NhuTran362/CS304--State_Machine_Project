@@ -68,7 +68,7 @@ static NFA NFA_10s(vector<string>{"0", "1", "2"}, set<string>{"0", "1"}, "0", ma
 static NFA NFA_empty_string(vector<string>{"0", "1"}, set<string>{"0", "1"}, "0", map<Pair, set<string>>{ {Pair("0", "EPSILON"), { "1" }}}, vector<string>{"1"});
 
 //accept everything but the empty string
-static NFA NFA_nonempty_string(vector<string>{"0", "1", "2"}, set<string>{"0", "1"}, "0", map<Pair, set<string>>{ {Pair("0", "EPSILON"), { "2" }}, { Pair("0", "0"), { "1" }}, { Pair("0", "1"), { "1" } }}, vector<string>{"1"});
+static NFA NFA_nonempty_string(vector<string>{"0", "1", "2"}, set<string>{"0", "1"}, "0", map<Pair, set<string>>{ {Pair("0", "EPSILON"), { "2" }}, { Pair("0", "0"), { "1" }}, { Pair("0", "1"), { "1" } }, { Pair("1", "0"), { "1" } }, { Pair("1", "1"), { "1" } }}, vector<string>{"1"});
 
 //accep "10"
 static NFA NFA_10(vector<string>{"0", "1", "2"}, set<string>{"0", "1"}, "0", map<Pair, set<string>>{ {Pair("0", "1"), { "1" }}, { Pair("1", "0"), { "2" }}}, vector<string>{"2"});
