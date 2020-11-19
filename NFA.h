@@ -284,5 +284,35 @@ const list<string> NFA_1s_or_end_0_t12 = { "0 1","2 EPSILON" };
 // TASK 27
 config string_to_config(string str); 
 bool NFA_Oracle(const NFA& myNFA, string str, list<string> trace);
+
+//TASK 28
+
+class trace_tree {
+public:
+	trace_tree(bool a, string initq, list<pair<string, trace_tree*>> b) : accepted(a), q(initq), branches(b) {}
+	trace_tree(const trace_tree&& obj){
+	
+		accepted = obj.accepted;
+		q = obj.q;
+		for(auto &each:obj.branches)
+		branches.push_front(each);
+	}
+	void operator=( const trace_tree& obj) {
+		{
+			if (&obj == this)
+				return;
+			accepted = obj.accepted;
+			q = obj.q;
+			for (auto &each : obj.branches)
+				branches.push_back(each);
+		}
+	}
+	
+	
+	bool accepted;
+	string q;
+	list<pair<string, trace_tree*>> branches ;
+
+};
 #endif // !_NFA_H_
 
