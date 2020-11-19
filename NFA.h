@@ -77,7 +77,7 @@ static NFA NFA_10(vector<string>{"0", "1", "2"}, set<string>{"0", "1"}, "0", map
 static NFA NFA_non_empty_even_len(vector<string>{"0", "1", "2","3"}, set<string>{"0", "1"}, "0", map<Pair, set<string>>{ {Pair("0", "1"), { "1" }}, {Pair("0", "0"), { "1" } }, { Pair("0", "EPSILON"), { "3" }}, { Pair("1", "0"), { "2"}}, { Pair("1", "1"), { "2" }}, { Pair("2", "0"), { "1"} }, { Pair("2", "1"), { "1" } }}, vector<string>{"2"});
 
 //consecutive 0 and not empty
-static NFA NFA_0s(vector<string>{"0", "1", "2"}, set<string>{"0", "1"}, "0", map<Pair, set<string>>{ {Pair("0", "0"), { "1" }}, { Pair("0", "EPSILON"), {"2"} }, { Pair("1","0"),{"1"} }}, vector<string>{"0"});
+static NFA NFA_0s(vector<string>{"0", "1", "2"}, set<string>{"0", "1"}, "0", map<Pair, set<string>>{ {Pair("0", "0"), { "1" }}, { Pair("0", "EPSILON"), {"2"} }, { Pair("1","0"),{"1"} }}, vector<string>{"1"});
 
 //consecutive 0 or consecutive "01"
 static NFA NFA_0s_or_01s(vector<string>{"0", "1", "2","3"}, set<string>{"0", "1"}, "0", map<Pair, set<string>>{ {Pair("0", "0"), { "1","2"}}, { Pair("1", "0"), {"1"}}, { Pair("2", "1"), {"3"}}, { Pair("3", "0"), {"2"}}}, vector<string>{"1","3"});
