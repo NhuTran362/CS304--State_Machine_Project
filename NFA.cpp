@@ -558,3 +558,44 @@ trace_tree NFA_1s_or_end_0_tree6_2(false, "2", { {"1",&NFA_1s_or_end_0_tree6_4 }
 trace_tree NFA_1s_or_end_0_tree6_1(false, "1", { {"1",&NFA_1s_or_end_0_tree6_3} });
 trace_tree NFA_1s_or_end_0_tree6_0(false, "0", { {"EPSILON",&NFA_1s_or_end_0_tree6_1 }, { "EPSILON", &NFA_1s_or_end_0_tree6_2 } });
 
+//TASK 30 
+trace_tree NFA_Forking(const NFA& n, myString w) {
+	return explore(n, w, n.getStartState());
+}
+
+trace_tree explore(const NFA& n, myString w, string q) {
+	
+	map<Pair, set<string>> T = n.getTransition();
+	vector<string> F = n.getAcceptingState();
+	string a = w.getCharacterAt(0);
+	map<Pair, set<string>>::iterator p = T.find({ q, a });
+	list <pair<string, trace_tree*>> branch;
+	bool v = false;
+	
+	if (w == myString(set<string>{"0", "1"}, vector<string> {"EPSILON"})) {
+		
+		if (find(F.begin(), F.end(), q) != F.end())
+		{
+			return trace_tree(true, q, { {"EPSILON",nullptr} });
+		}
+		else
+		{
+			return trace_tree(false, q, { {"EPSILON",nullptr} });
+		}
+	}
+	if (p == T.end()) {
+		return trace_tree{ false, q, {{a, nullptr}} };
+	}
+	
+	w.pop_front();
+	set<string> states = p->second;
+	
+	for (auto p1 = states.begin();p1 != states.end(); p1++)
+		branch.push_front(pair<string, trace_tree*>{a, &explore(n, w, *p1)});
+
+	for (auto each : branch) 	
+		v = v || each.second->accepted;
+	trace_tree tree(v, q, branch);
+	return tree;
+	
+}
