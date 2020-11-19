@@ -189,6 +189,197 @@ int main(int argc, char * argv[]) {
 	else
 		cout << "DFA_Intersection does not work!" << endl;
 	
+	
+	//TASK 31
+	test_NFA_11_00_1();
+	test_NFA_11_00_2();
+	test_NFA_11_00_3();
+	test_NFA_11_00_4();
+	test_NFA_11_00_5();
+	test_NFA_11_00_6();
+	test_NFA_11_00_7();
+	test_NFA_11_00_8();
+	test_NFA_11_00_9();
+	test_NFA_11_00_10();
+	test_NFA_11_00_11();
+	test_NFA_11_00_12();
+
+	test_NFA_end_01_1();
+	test_NFA_end_01_2();
+	test_NFA_end_01_3();
+	test_NFA_end_01_4();
+	test_NFA_end_01_5();
+	test_NFA_end_01_6();
+	test_NFA_end_01_7();
+	test_NFA_end_01_8();
+	test_NFA_end_01_9();
+	test_NFA_end_01_10();
+	test_NFA_end_01_11();
+	test_NFA_end_01_12();
+	
+	//test for NFA_third_0
+	test_NFA_third_0_1();
+	test_NFA_third_0_2();
+	test_NFA_third_0_3();
+	test_NFA_third_0_4();
+	test_NFA_third_0_5();
+	test_NFA_third_0_6();
+	test_NFA_third_0_7();
+	test_NFA_third_0_8();
+	test_NFA_third_0_9();
+	test_NFA_third_0_10();
+	test_NFA_third_0_11();
+	test_NFA_third_0_12();
+
+
+	//test for NFA_substring_1110
+	test_NFA_substring_1110_1();
+	test_NFA_substring_1110_2();
+	test_NFA_substring_1110_3();
+	test_NFA_substring_1110_4();
+	test_NFA_substring_1110_5();
+	test_NFA_substring_1110_6();
+	test_NFA_substring_1110_7();
+	test_NFA_substring_1110_8();
+	test_NFA_substring_1110_9();
+	test_NFA_substring_1110_10();
+	test_NFA_substring_1110_11();
+	test_NFA_substring_1110_12();
+
+	//test for NFA_10s
+	test_NFA_10s_1();
+	test_NFA_10s_2();
+	 test_NFA_10s_3();
+	 test_NFA_10s_4();
+	 test_NFA_10s_5();
+	 test_NFA_10s_6();
+	 test_NFA_10s_7();
+	 test_NFA_10s_8();
+	 test_NFA_10s_9();
+	 test_NFA_10s_10();
+	 test_NFA_10s_11();
+	 test_NFA_10s_12();
+
+
+	 //test for NFA_empty_string
+	  test_NFA_empty_string_1();
+	  test_NFA_empty_string_2();
+	  test_NFA_empty_string_3();
+	  test_NFA_empty_string_4();
+	  test_NFA_empty_string_5();
+	  test_NFA_empty_string_6();
+	  test_NFA_empty_string_7();
+	  test_NFA_empty_string_8();
+	  test_NFA_empty_string_9();
+	  test_NFA_empty_string_10();
+	  test_NFA_empty_string_11();
+	  test_NFA_empty_string_12();
+
+	  //test for NFA_nonempty_string
+	   test_NFA_nonempty_string_1();
+	   test_NFA_nonempty_string_2();
+	   test_NFA_nonempty_string_3();
+	   test_NFA_nonempty_string_4();
+	   test_NFA_nonempty_string_5();
+	   test_NFA_nonempty_string_6();
+	   test_NFA_nonempty_string_7();
+	   test_NFA_nonempty_string_8();
+	   test_NFA_nonempty_string_9();
+	   test_NFA_nonempty_string_10();
+	   test_NFA_nonempty_string_11();
+	   test_NFA_nonempty_string_12();
+
+	   //test for NFA_10
+	    test_NFA_10_1();
+	    test_NFA_10_2();
+	    test_NFA_10_3();
+	    test_NFA_10_4();
+	    test_NFA_10_5();
+	    test_NFA_10_6();
+	    test_NFA_10_7();
+	    test_NFA_10_8();
+	    test_NFA_10_9();
+	    test_NFA_10_10();
+	    test_NFA_10_11();
+	    test_NFA_10_12();
+
+		//test for NFA_non_empty_even_len
+		 test_NFA_non_empty_even_len_1();
+		 test_NFA_non_empty_even_len_2();
+		 test_NFA_non_empty_even_len_3();
+		 test_NFA_non_empty_even_len_4();
+		 test_NFA_non_empty_even_len_5();
+		 test_NFA_non_empty_even_len_6();
+		 test_NFA_non_empty_even_len_7();
+		 test_NFA_non_empty_even_len_8();
+		 test_NFA_non_empty_even_len_9();
+		 test_NFA_non_empty_even_len_10();
+		 test_NFA_non_empty_even_len_11();
+		 test_NFA_non_empty_even_len_12();
+
+
+		 //test for NFA_0s
+		 test_NFA_0s_1();
+		 test_NFA_0s_2();
+		 test_NFA_0s_3();
+		 test_NFA_0s_4();
+		 test_NFA_0s_5();
+		 test_NFA_0s_6();
+		 test_NFA_0s_7();
+		 test_NFA_0s_8();
+		 test_NFA_0s_9();
+		 test_NFA_0s_10();
+		 test_NFA_0s_11();
+		 test_NFA_0s_12();
+
+		 //test for NFA_0s_or_01s
+		  test_NFA_0s_or_01s_1();
+		  test_NFA_0s_or_01s_2();
+		  test_NFA_0s_or_01s_3();
+		  test_NFA_0s_or_01s_4();
+		  test_NFA_0s_or_01s_5();
+		  test_NFA_0s_or_01s_6();
+		  test_NFA_0s_or_01s_7();
+		  test_NFA_0s_or_01s_8();
+		  test_NFA_0s_or_01s_9();
+		  test_NFA_0s_or_01s_10();
+		  test_NFA_0s_or_01s_11();
+		  test_NFA_0s_or_01s_12();
+
+		  //test for NFA_1s_or_end_0
+		   test_NFA_1s_or_end_0_1();
+		   test_NFA_1s_or_end_0_2();
+		   test_NFA_1s_or_end_0_3();
+		   test_NFA_1s_or_end_0_4();
+		   test_NFA_1s_or_end_0_5();
+		   test_NFA_1s_or_end_0_6();
+		   test_NFA_1s_or_end_0_7();
+		   test_NFA_1s_or_end_0_8();
+		   test_NFA_1s_or_end_0_9();
+		   test_NFA_1s_or_end_0_10();
+		   test_NFA_1s_or_end_0_11();
+		   test_NFA_1s_or_end_0_12();
+
+
+	//TASK 32
+		cout << "TESTS FOR TASK 32: \n\n";
+		if (NFA_Backtracking(NFA_11_00, myString("10101100")))
+			cout << "TEST 1 PASSED\n\n";
+		else
+			cout << "TEST 1 NOT PASSED\n\n";
+		if (!NFA_Backtracking(NFA_0s, myString("10101100")))
+			cout << "TEST 2 PASSED\n\n";
+		else
+			cout << "TEST 2 NOT PASSED\n\n";
+		if (NFA_Backtracking(NFA_0s, myString("0000")))
+			cout << "TEST 3 PASSED\n\n";
+		else
+			cout << "TEST 3 NOT PASSED\n\n";
+		if (NFA_Backtracking(NFA_0s_or_01s, myString("0101010")))
+			cout << "TEST 4 PASSED\n\n";
+		else
+			cout << "TEST 4 NOT PASSED\n\n";
+	
 	char c;
 	cin >> c;
 
