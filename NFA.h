@@ -487,5 +487,10 @@ void test_NFA_1s_or_end_0_10();
 void test_NFA_1s_or_end_0_11();
 void test_NFA_1s_or_end_0_12();
 
+
+//TASK 32
+bool NFA_Backtracking( NFA obj, myString s);
+bool NFA_search(NFA obj, vector<string> acceptedStates, myString w, string currentState);
+
 #endif // !_NFA_H_
 
