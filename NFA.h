@@ -280,5 +280,9 @@ const list<string> NFA_1s_or_end_0_t9 = { "0 11","2 1", "1 1", "1 EPSILON" };
 const list<string> NFA_1s_or_end_0_t10 = { "0 11","1 1", "2 1", "2 EPSILON" };
 const list<string> NFA_1s_or_end_0_t11 = { "0 1","3 EPSILON"};
 const list<string> NFA_1s_or_end_0_t12 = { "0 1","2 EPSILON" };
+
+// TASK 27
+config string_to_config(string str); 
+bool NFA_Oracle(const NFA& myNFA, string str, list<string> trace);
 #endif // !_NFA_H_
 
