@@ -1941,4 +1941,113 @@ NFA NFA_Concat(const NFA& A, const NFA&B) {
 	return NFA(stateC, A.getAlphabet(), startC, T_C, F_C);
 }
 
+//TASK 36
+NFA NFA_KStart(const NFA& A) {
+	vector<string> State = A.getState();
+	map<Pair, set<string>> T = A.getTransition();
+	vector<string> accept = A.getAcceptingState();
+	State.push_back("StartK");
+	T[{"StartK", "EPSILON"}].insert({ A.getStartState() });
+	for (auto &each : accept)
+		T[{each, "EPSILON"}].insert("StartK");
+	return NFA(State, A.getAlphabet(), "StartK", T, A.getAcceptingState());
+}
+//TASK 37
+void test_NFA_KStart_01() {
+	cout << "\n\ntest_NFA_KStart_01: ";
+	NFA test = NFA_KStart(NFA_0s_or_01s);
+	if (NFA_Backtracking(test, myString("0010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_KStart_02() {
+	cout << "test_NFA_KStart_02: ";
+	NFA test = NFA_KStart(NFA_1s_or_end_0);
+	if (NFA_Backtracking(test, myString("0")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_KStart_03() {
+	cout << "test_NFA_KStart_03: ";
+	NFA test = NFA_KStart(NFA_10);
+	if (NFA_Backtracking(test, myString("1010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_KStart_04() {
+	cout << "test_NFA_KStart_04: ";
+	NFA test = NFA_KStart(NFA_Union(NFA_third_0, NFA_end_01));
+	if (NFA_Backtracking(test, myString("01101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_KStart_05() {
+	cout << "test_NFA_KStart_05: ";
+	NFA test = NFA_KStart(NFA_Union(NFA_third_0, NFA_end_01));
+	if (NFA_Backtracking(test, myString("01101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_KStart_06() {
+	cout << "test_NFA_KStart_06: ";
+	NFA test = NFA_KStart(NFA_Union(NFA_10s, NFA_0s));
+	if (NFA_Backtracking(test, myString("100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_KStart_07() {
+	cout << "test_NFA_KStart_07: ";
+	NFA test = NFA_KStart(NFA_Union(NFA_0s, NFA_non_empty_even_len));
+	if (NFA_Backtracking(test, myString("110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_KStart_08() {
+	cout << "test_NFA_KStart_08: ";
+	NFA test = NFA_KStart(NFA_Union(NFA_0s_or_01s, NFA_non_empty_even_len));
+	if (NFA_Backtracking(test, myString("010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_KStart_09() {
+	cout << "test_NFA_KStart_09: ";
+	NFA test = NFA_KStart(NFA_1s_or_end_0);
+	if (NFA_Backtracking(test, myString("101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_KStart_10() {
+	cout << "test_NFA_KStart_10: ";
+	NFA test = NFA_KStart(NFA_Union(NFA_0s_or_01s, NFA_1s_or_end_0));
+	if (NFA_Backtracking(test, myString("0110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_KStart_11(){
+	cout << "test_NFA_KStart_11: ";
+	NFA test = NFA_KStart(NFA_Union(NFA_0s, NFA_1s_or_end_0));
+	if (NFA_Backtracking(test, myString("001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_KStart_12() {
+	cout << "test_NFA_KStart_12: ";
+	NFA test = NFA_KStart(NFA_Union(NFA_third_0, NFA_10));
+	if (NFA_Backtracking(test, myString("00010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
 
