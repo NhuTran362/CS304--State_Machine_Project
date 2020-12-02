@@ -568,18 +568,20 @@ trace_tree explore(const NFA& n, myString w, string q) {
 	map<Pair, set<string>> T = n.getTransition();
 	vector<string> F = n.getAcceptingState();
 	string a = w.getCharacterAt(0);
-	map<Pair, set<string>>::iterator p = T.find({ q, a });
+	map<Pair, set<string>>::iterator p = T.find(Pair{ q, a });
 	list <pair<string, trace_tree*>> branch;
 	bool v = false;
 	
-	if (w == myString(set<string>{"0", "1"}, vector<string> {"EPSILON"})) {
+	if (w == myString(w.getAlphabet(), vector<string> {"EPSILON"})) {
 		
 		if (find(F.begin(), F.end(), q) != F.end())
 		{
+			//cout << "here1 " << w << " " << q << endl;
 			return trace_tree(true, q, { {"EPSILON",nullptr} });
 		}
-		else
+		else if (p == T.end())
 		{
+			//cout << "here2 " << w << " " << q << endl;
 			return trace_tree(false, q, { {"EPSILON",nullptr} });
 		}
 	}
@@ -588,14 +590,19 @@ trace_tree explore(const NFA& n, myString w, string q) {
 	}
 	
 	w.pop_front();
-	set<string> states = p->second;
-	
-	for (auto p1 = states.begin();p1 != states.end(); p1++)
-		branch.push_front(pair<string, trace_tree*>{a, &explore(n, w, *p1)});
+	auto states = p->second;
+	vector<trace_tree> tt;
+	for (auto p1 = states.begin();p1 != states.end(); ++p1) 
+		tt.push_back(explore(n, w, *p1));
 
-	for (auto each : branch) 	
+	for(unsigned i = 0; i < tt.size(); i++)
+		branch.push_front(pair<string, trace_tree*>{a, &tt[i]});
+
+	for (auto& each : branch) 
 		v = v || each.second->accepted;
 	trace_tree tree(v, q, branch);
+	//cout << "here3 " << w << " " <<q << endl;
+
 	return tree;
 	
 }
@@ -1629,7 +1636,7 @@ void test_NFA_0s_or_01s_1() {
 
 void test_NFA_0s_or_01s_2() {
 	cout << "NFA_0s_or_01s TEST 2: ";
-	if (NFA_Backtracking(NFA_0s_or_01s, myString("0101010")))
+	if (NFA_Backtracking(NFA_0s_or_01s, myString("01010101")))
 		cout << "PASSED\n\n";
 	else
 		cout << "NOT PASSED\n\n";
@@ -1642,7 +1649,7 @@ void test_NFA_0s_or_01s_3() {
 		cout << "NOT PASSED\n\n";
 }
 void test_NFA_0s_or_01s_4() {
-	cout << "\n\nNFA_0s_or_01s TEST 4: ";
+	cout << "NFA_0s_or_01s TEST 4: ";
 	if (NFA_Backtracking(NFA_0s_or_01s, myString("0101")))
 		cout << "PASSED\n\n";
 	else
@@ -1657,7 +1664,7 @@ void test_NFA_0s_or_01s_5() {
 }
 void test_NFA_0s_or_01s_6() {
 	cout << "NFA_0s_or_01s TEST 6: ";
-	if (NFA_Backtracking(NFA_0s_or_01s, myString("101010")))
+	if (NFA_Backtracking(NFA_0s_or_01s, myString("1010101")))
 		cout << "PASSED\n\n";
 	else
 		cout << "NOT PASSED\n\n";
@@ -1806,22 +1813,31 @@ bool NFA_search(NFA obj, vector<string> acceptedStates, myString w, string curre
 {
 	map<Pair, set<string>> T = obj.getTransition();
 	string a = w.getCharacterAt(0);
-	set<string> nextState = obj.myTransition(currentState, a);
+	auto nextState = T.find({ currentState, a });
+	auto emptyT = T.find({ currentState,"EPSILON" });
 	list <pair<string, trace_tree*>> branch;
-	bool v = false;
-	if (nextState.empty())
-		return false;
+
 	if (w.getStringLen() == 0) {
-		for (auto &each : nextState) {
-			if (find(acceptedStates.begin(), acceptedStates.end(), each) != acceptedStates.end())
+			if (find(acceptedStates.begin(), acceptedStates.end(), currentState) != acceptedStates.end())
 				return true;
-			return false;
+			else if(nextState == T.end())
+				return false;
 		}
-		w.pop_front();
-		for (auto &p1 : nextState)
+
+	if (emptyT != T.end()) {
+		for (auto &p1 : emptyT->second) {
 			if (NFA_search(obj, acceptedStates, w, p1))
 				return NFA_search(obj, acceptedStates, w, p1);
+		}
 	}
+	if (nextState != T.end()) {
+		w.pop_front();
+		for (auto &p1 : nextState->second) {
+			if (NFA_search(obj, acceptedStates, w, p1))
+				return NFA_search(obj, acceptedStates, w, p1);
+		}
+	}
+	return false;
 }
 
 //TASK 33
