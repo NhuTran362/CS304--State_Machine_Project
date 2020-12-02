@@ -490,7 +490,7 @@ void test_NFA_1s_or_end_0_12();
 
 //TASK 32
 bool NFA_Backtracking( NFA obj, myString s);
-bool NFA_search(NFA obj, vector<string> acceptedStates, myString w, string currentState);
+bool NFA_search(const NFA& obj, const vector<string>& acceptedStates, myString w, const string& currentState, vector<string> visited, int loop_detect = 0);
 
 //TASK 33
 NFA NFA_Union(const NFA& A, const NFA& B);
