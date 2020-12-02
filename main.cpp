@@ -1,4 +1,6 @@
+#include "myString.h"
 #include "DFA.h"
+#include "NFA.h"
 
 int main(int argc, char * argv[]) {
 
@@ -304,7 +306,7 @@ int main(int argc, char * argv[]) {
 	    test_NFA_10_12();
 
 		//test for NFA_non_empty_even_len
-		 test_NFA_non_empty_even_len_1();
+		 \test_NFA_non_empty_even_len_1();
 		 test_NFA_non_empty_even_len_2();
 		 test_NFA_non_empty_even_len_3();
 		 test_NFA_non_empty_even_len_4();
@@ -375,7 +377,7 @@ int main(int argc, char * argv[]) {
 			cout << "TEST 3 PASSED\n\n";
 		else
 			cout << "TEST 3 NOT PASSED\n\n";
-		if (NFA_Backtracking(NFA_0s_or_01s, myString("0101010")))
+		if (NFA_Backtracking(NFA_0s_or_01s, myString("01010101")))
 			cout << "TEST 4 PASSED\n\n";
 		else
 			cout << "TEST 4 NOT PASSED\n\n";
