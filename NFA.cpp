@@ -1809,34 +1809,42 @@ bool NFA_Backtracking(NFA obj, myString s) {
 
 	return NFA_search(obj, obj.getAcceptingState(), s, obj.getStartState());
 }
-bool NFA_search(NFA obj, vector<string> acceptedStates, myString w, string currentState)
+bool NFA_search(const NFA& obj, const vector<string>& acceptedStates, myString w, const string& currentState, vector<string> visited, int loop_detected)
 {
 	map<Pair, set<string>> T = obj.getTransition();
 	string a = w.getCharacterAt(0);
-	auto nextState = T.find({ currentState, a });
+	map<Pair, set<string>>::iterator nextState;
+	nextState = T.find({ currentState, a });
 	auto emptyT = T.find({ currentState,"EPSILON" });
 	list <pair<string, trace_tree*>> branch;
-
+	
+	if (loop_detected == visited.size() && loop_detected != 0)
+		return false;
 	if (w.getStringLen() == 0) {
-			if (find(acceptedStates.begin(), acceptedStates.end(), currentState) != acceptedStates.end())
-				return true;
-			else if(nextState == T.end())
-				return false;
+		if (find(acceptedStates.begin(), acceptedStates.end(), currentState) != acceptedStates.end())
+			return true;
+		
+		else if (nextState == T.end())
+			return false;
 		}
-
+	if (find(visited.begin(), visited.end(), currentState) != visited.end() && nextState == T.end() && emptyT != T.end())
+		++loop_detected;
+	else
+		visited.push_back(currentState);
 	if (emptyT != T.end()) {
 		for (auto &p1 : emptyT->second) {
-			if (NFA_search(obj, acceptedStates, w, p1))
-				return NFA_search(obj, acceptedStates, w, p1);
+			if (NFA_search(obj, acceptedStates, w, p1, visited,loop_detected))
+				return true;
 		}
 	}
 	if (nextState != T.end()) {
 		w.pop_front();
 		for (auto &p1 : nextState->second) {
-			if (NFA_search(obj, acceptedStates, w, p1))
-				return NFA_search(obj, acceptedStates, w, p1);
+			if (NFA_search(obj, acceptedStates, w, p1,visited))
+				return true;	
 		}
 	}
+	
 	return false;
 }
 
