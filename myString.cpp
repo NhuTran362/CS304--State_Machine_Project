@@ -193,15 +193,15 @@ myString generate_Nth_string_lexi(set<string> alphabet, int n) {
 /*******************************************/
 
 void myString::pop_front() {
-	if (!_string.empty())
+	if (!_string.empty() && _string[0] != "EPSILON")
 	{
 		_string.erase(_string.begin());
 
 		_stringLen--;
-	}
 	
 	if (_stringLen == 0)
 		_string.push_back("EPSILON");
+	}
 }
 
 void myString::push_back(string newCharacter) {
