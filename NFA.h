@@ -498,5 +498,21 @@ NFA NFA_Union(const NFA& A, const NFA& B);
 //TASK 34
 NFA NFA_Concat(const NFA& A, const NFA&B);
 
+//TASK 36
+NFA  NFA_KStart(const NFA& A);
+
+//TASK 37
+void test_NFA_KStart_01();
+void test_NFA_KStart_02();
+void test_NFA_KStart_03();
+void test_NFA_KStart_04();
+void test_NFA_KStart_05();
+void test_NFA_KStart_06();
+void test_NFA_KStart_07();
+void test_NFA_KStart_08();
+void test_NFA_KStart_09();
+void test_NFA_KStart_10();
+void test_NFA_KStart_12();
+
 #endif // !_NFA_H_
 
