@@ -444,6 +444,19 @@ int main(int argc, char * argv[]) {
 			cout << "TEST 12 PASSED\n\n";
 		else
 			cout << "TEST 12 NOT PASSED\n\n";
+		//TASK 37
+		test_NFA_KStart_01();
+		test_NFA_KStart_02();
+		test_NFA_KStart_03();
+		test_NFA_KStart_04();
+		test_NFA_KStart_05();
+		test_NFA_KStart_06();
+		test_NFA_KStart_07();
+		test_NFA_KStart_08();
+		test_NFA_KStart_09();
+		test_NFA_KStart_10();
+		test_NFA_KStart_11();
+		test_NFA_KStart_12();
 
 	
 	char c;
