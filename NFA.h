@@ -512,6 +512,7 @@ void test_NFA_KStart_07();
 void test_NFA_KStart_08();
 void test_NFA_KStart_09();
 void test_NFA_KStart_10();
+void test_NFA_KStart_11();
 void test_NFA_KStart_12();
 
 #endif // !_NFA_H_
