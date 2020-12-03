@@ -108,4 +108,33 @@ private:
 	Regex* rhs;
 };
 
+//TASK 43
+static  RE_Empty re_empty;
+static  RE_Epsilon re_epsilon;
+static  RE_Char r0("0");
+static  RE_Char r1("1");
+static  RE_Union r_0U1(r0, r1);
+static  RE_Start r0_start(r0);
+static  RE_Circ r_01(r0, r1);
+static  RE_Circ r_10(r1,r0);
+static  RE_Start r_10_Start(r_10);
+static  RE_Circ r_01_10_Start(r_01, r_10_Start);
+static  RE_Circ r_00(r0, r0);
+static  RE_Union r_00U01_10_Start(r_00, r_01_10_Start);
+
+
+
+//TASK 44
+void test_r1();
+void test_r2();
+void test_r3();
+void test_r4();
+void test_r5();
+void test_r6();
+void test_r7();
+void test_r8();
+void test_r9();
+void test_r10();
+void test_r11();
+void test_r12();
 #endif // !_REGEX_H_
