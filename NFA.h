@@ -2,6 +2,7 @@
 #define _NFA_H_
 
 #include "myString.h"
+#include "DFA.h"
 #include <map>
 #include <vector>
 #include <set>
