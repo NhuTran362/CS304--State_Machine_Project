@@ -3242,4 +3242,39 @@ void test_NFA_1s_or_end_0_12_DFA() {
 		cout << "NOT PASSED\n\n";
 }
 
+//TASK 40
+void test_NFA_DFA_Equal_11_00() {
+	cout << "\n\ntest_NFA_DFA_Equal_11_00: ";
+	DFA test({ "0","1","2","3","4" }, { "0","1" }, "0", { {{"0","1"}, "1"}, {{"1","0"},"0"}, {{"1","1"},"2"}, {{"2","0"},"3"}, {{"3","0"},"4"}, {{"3","1"},"1"} }, { "4" });
+	if (DFA_Equality(test, NFA_to_DFA(NFA_11_00)))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_DFA_Equal_10s() {
+	cout << "\n\ntest_NFA_DFA_Equal_10s: ";
+	DFA test({ "0","1","2","3" }, { "0","1" }, "0", { {{"0","1"}, "1"}, {{"0","0"}, "3"}, {{"1","0"}, "2"}, {{"1","1"}, "3"}, {{"2","1"}, "1"}, {{"2","0"}, "3"}, }, { "0", "2" });
+	if (DFA_Equality(test, NFA_to_DFA(NFA_10s)))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_DFA_Equal_10() {
+	cout << "\n\ntest_NFA_DFA_Equal_10: ";
+	DFA test({ "0","1","2","3" }, { "0","1" }, "0", { {{"0","1"}, "1"}, {{"0","0"}, "3"}, {{"1","0"}, "2"}, {{"1","1"}, "3"}, {{"2","1"}, "3"}, {{"2","0"}, "3"}, }, { "2" });
+	if (DFA_Equality(test, NFA_to_DFA(NFA_10)))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+
+}
+void test_NFA_DFA_Equal_0s() {
+	cout << "\n\ntest_NFA_DFA_Equal_0s: ";
+	DFA test({ "0","1", "2" }, { "0","1" }, "0", { {{"0","0"}, "1"},  {{"0","1"}, "2"}, {{"1","1"}, "2"} }, { "1" });
+	if (DFA_Equality(test, NFA_to_DFA(NFA_0s)))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
 
