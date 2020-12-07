@@ -60,7 +60,7 @@ public:
 	void operator=(const myString& copiedOjb);
 	bool operator==(const myString& obj);
 	bool operator!=(const myString& obj);
-
+	friend myString operator+(const myString & obj1 , const myString& obj2);
 };
 
 bool isSubSet(set<string> alphabetA, set<string> alphabetB); // check if alphabetA a subset of alphabetB
