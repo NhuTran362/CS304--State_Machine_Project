@@ -175,7 +175,7 @@ int main(int argc, char * argv[]) {
 	test_string_that_accept_only_101_EQUAL_string_that_accept_only_101();
 	test_string_of_len_2_EQUAL_Intersection_of_len_2_and_even_len();
 	
-	/TASK 22
+	//TASK 22
 	static DFA odd_len(vector<string> { "0", "1" }, set<string> {"0", "1"}, "0", map<Pair, string> { {Pair("0", "0"), "1"}, { Pair("0", "1"), "1" }, { Pair("1", "0"), "0" }, { Pair("1", "1"), "0" }}, { "1" });
 	if(DFA_Equality(odd_len, DFA_Complement(even_len)))
 		cout <<"DFA_Complement works!"<<endl;
