@@ -1,5 +1,7 @@
 #include "NFA.h"
+#include "DFA.h"
 #include "myString.h"
+#include <algorithm>
 //TASK 23
 
 NFA::NFA(const NFA& initNFA) {
@@ -1806,8 +1808,8 @@ void test_NFA_1s_or_end_0_12() {
 }
 //TASK 32
 bool NFA_Backtracking(NFA obj, myString s) {
-
-	return NFA_search(obj, obj.getAcceptingState(), s, obj.getStartState());
+	vector<string> visited;
+	return NFA_search(obj, obj.getAcceptingState(), s, obj.getStartState(), visited);
 }
 bool NFA_search(const NFA& obj, const vector<string>& acceptedStates, myString w, const string& currentState, vector<string> visited, int loop_detected)
 {
