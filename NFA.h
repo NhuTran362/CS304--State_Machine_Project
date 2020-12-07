@@ -692,5 +692,12 @@ void test_NFA_1s_or_end_0_10_DFA();
 void test_NFA_1s_or_end_0_11_DFA();
 void test_NFA_1s_or_end_0_12_DFA();
 
+//TASK 40
+void test_NFA_DFA_Equal_11_00();
+void test_NFA_DFA_Equal_10s();
+void test_NFA_DFA_Equal_10();
+void test_NFA_DFA_Equal_0s();
+
+
 #endif // !_NFA_H_
 
