@@ -1,12 +1,13 @@
 #ifndef _REGEX_H_
 #define _REGEX_H_
-
 #include "myString.h"
+
 //TASK 41
 class Regex {
 public:
 	virtual void print_regex() { cout << "regex\n"; }; // TASK 42
 	virtual bool accept(myString r) { return 0; };
+	string type;
 	
 };
 class RE_Empty : public Regex {
@@ -47,7 +48,7 @@ public:
 		return lhs->accept(r) || rhs->accept(r);
 	}
 	Regex& getLhs() const { return *lhs; }
-	Regex& getrhs() const { return *rhs; }
+	Regex& getRhs() const { return *rhs; }
 private:
 	Regex* lhs;
 	Regex* rhs;
@@ -70,6 +71,7 @@ public:
 		}	
 		return (a == "");
 	}
+	Regex* getReg() const { return reg; }
 private:
 	Regex* reg;
 };
@@ -91,7 +93,6 @@ public:
 				marker.push_back(i + 1);
 			}
 		}
-
 			for (auto & each : marker) {
 				a = "";
 				for (int i = each; i < r.getStringLen(); i++) {
@@ -102,7 +103,8 @@ public:
 			}
 			return false;
 	}
-
+	Regex& getLhs() const { return *lhs; }
+	Regex& getRhs() const { return *rhs; }
 private:
 	Regex* lhs;
 	Regex* rhs;
