@@ -2176,4 +2176,1070 @@ void vector_add(vector<string>& a, const vector<string>& b){
 	return;
 }
 
+//TASK 39
+//test for NFA_11_00 to DFA
+void test_NFA_11_00_1_DFA() {
+	cout << "\n\nNFA_11_00_DFA TEST 1: ";
+	if (NFA_to_DFA(NFA_11_00).isAccepted(myString("101100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_2_DFA() {
+	cout << "NFA_11_00_DFA TEST 2: ";
+	if (NFA_to_DFA(NFA_11_00).isAccepted(myString("0110011")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+
+}
+void test_NFA_11_00_3_DFA() {
+	cout << "NFA_11_00_DFA TEST 3: ";
+	if (!NFA_to_DFA(NFA_11_00).isAccepted(myString("0111101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_4_DFA() {
+	cout << "NFA_11_00_DFA TEST 4: ";
+	if (!NFA_to_DFA(NFA_11_00).isAccepted(myString("0101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_5_DFA() {
+	cout << "NFA_11_00 TEST_DFA 5: ";
+	if (!NFA_to_DFA(NFA_11_00).isAccepted(myString("000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_6_DFA() {
+	cout << "NFA_11_00 TEST_DFA 6: ";
+	if (!NFA_to_DFA(NFA_11_00).isAccepted(myString("1000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_7_DFA() {
+	cout << "NFA_11_00_DFA TEST 7: ";
+	if (NFA_to_DFA(NFA_11_00).isAccepted(myString("0111100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n ";
+}
+void test_NFA_11_00_8_DFA() {
+	cout << "NFA_11_00_DFA TEST 8: ";
+	if (NFA_to_DFA(NFA_11_00).isAccepted(myString("1100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_9_DFA() {
+	cout << "NFA_11_00_DFA TEST 9: ";
+	if (!NFA_to_DFA(NFA_11_00).isAccepted(myString("0011")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_10_DFA() {
+	cout << "NFA_11_00_DFA TEST 10: ";
+	if (!NFA_to_DFA(NFA_11_00).isAccepted(myString("0")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_11_DFA() {
+	cout << "NFA_11_00_DFA TEST 11: ";
+	if (!NFA_to_DFA(NFA_11_00).isAccepted(myString("EPSILON")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_11_00_12_DFA() {
+	cout << "NFA_11_00_DFA TEST 12: ";
+	if (!NFA_to_DFA(NFA_11_00).isAccepted(myString("10000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+//test for NFA_end_01 to DFA
+void test_NFA_end_01_1_DFA() {
+	cout << "\n\nNFA_end_01_DFA TEST 1: ";
+	if (NFA_to_DFA(NFA_end_01).isAccepted(myString("01")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_2_DFA() {
+	cout << "NFA_end_01_DFA TEST 2: ";
+	
+	if (NFA_to_DFA(NFA_end_01).isAccepted(myString("001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_3_DFA() {
+	cout << "NFA_end_01_DFA TEST 3: ";
+	if (!NFA_to_DFA(NFA_end_01).isAccepted(myString("0")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_4_DFA() {
+	cout << "NFA_end_01_DFA TEST 4: ";
+	if (!NFA_to_DFA(NFA_end_01).isAccepted(myString("1")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_5_DFA() {
+	cout << "NFA_end_01_DFA TEST 5: ";
+	if (!NFA_to_DFA(NFA_end_01).isAccepted(myString("EPSILON")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_6_DFA() {
+	cout << "NFA_end_01 TEST_DFA 6: ";
+	if (NFA_to_DFA(NFA_end_01).isAccepted(myString("101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_7_DFA() {
+	cout << "NFA_end_01_DFA TEST 7: ";
+	if (NFA_to_DFA(NFA_end_01).isAccepted(myString("1101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_8_DFA() {
+	cout << "NFA_end_01_DFA TEST 8: ";
+	if (!NFA_to_DFA(NFA_end_01).isAccepted(myString("10")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_9_DFA() {
+	cout << "NFA_end_01_DFA TEST 9: ";
+	if (!NFA_to_DFA(NFA_end_01).isAccepted(myString("010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_10_DFA() {
+	cout << "NFA_end_01_DFA TEST 10: ";
+	if (!NFA_to_DFA(NFA_end_01).isAccepted(myString("1110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_11_DFA() {
+	cout << "NFA_end_01_DFA TEST 11: ";
+	if (NFA_to_DFA(NFA_end_01).isAccepted(myString("0101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_end_01_12_DFA() {
+	cout << "NFA_end_01_DFA TEST 12: ";
+	if (!NFA_to_DFA(NFA_end_01).isAccepted(myString("11")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+//test for NFA_third_0 to DFA
+void test_NFA_third_0_1_DFA() {
+	cout << "\n\nNFA_third_0_11_DFA TEST 1: ";
+	if (!NFA_to_DFA(NFA_third_0).isAccepted(myString("11")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_2_DFA() {
+	cout << "NFA_third_0_11_DFA TEST 2: ";
+	if (NFA_to_DFA(NFA_third_0).isAccepted(myString("011")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_3_DFA() {
+	cout << "NFA_third_0_11_DFA TEST 3: ";
+	if (NFA_to_DFA(NFA_third_0).isAccepted(myString("1011")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_4_DFA() {
+	cout << "NFA_third_0_11_DFA TEST 4: ";
+	if (!NFA_to_DFA(NFA_third_0).isAccepted(myString("111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_5_DFA() {
+	cout << "NFA_third_0_11_DFA TEST 5: ";
+	if (NFA_to_DFA(NFA_third_0).isAccepted(myString("10011")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_6_DFA() {
+	cout << "NFA_third_0_11_DFA TEST 6: ";
+	if (!NFA_to_DFA(NFA_third_0).isAccepted(myString("EPSILON")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_7_DFA() {
+	cout << "NFA_third_0_11_DFA TEST 7: ";
+	if (!NFA_to_DFA(NFA_third_0).isAccepted(myString("1100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_8_DFA() {
+	cout << "NFA_third_0_11_DFA TEST 8: ";
+	if (NFA_to_DFA(NFA_third_0).isAccepted(myString("0000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_9_DFA() {
+	cout << "NFA_third_0_11_DFA TEST 9: ";
+	if (!NFA_to_DFA(NFA_third_0).isAccepted(myString("1")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_10_DFA() {
+	cout << "NFA_third_0_11_DFA TEST 10: ";
+	if (!NFA_to_DFA(NFA_third_0).isAccepted(myString("0")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_11_DFA() {
+	cout << "NFA_third_0_11_DFA TEST 11: ";
+	if (NFA_to_DFA(NFA_third_0).isAccepted(myString("01001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_third_0_12_DFA() {
+	cout << "NFA_third_0_11_DFA TEST 12: ";
+	if (!NFA_to_DFA(NFA_third_0).isAccepted(myString("01110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+
+//test for NFA_substring_1110 to DFA
+void test_NFA_substring_1110_1_DFA() {
+	{
+		cout << "\n\nNFA_substring_1110_DFA TEST 1: ";
+		if (NFA_to_DFA(NFA_substring_1110).isAccepted(myString("1110")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_2_DFA() {
+	{
+		cout << "NFA_substring_1110_DFA TEST 2: ";
+		if (NFA_to_DFA(NFA_substring_1110).isAccepted(myString("11100")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_3_DFA() {
+	{
+		cout << "NFA_substring_1110_DFA TEST 3: ";
+		if (NFA_to_DFA(NFA_substring_1110).isAccepted(myString("01110")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_4_DFA() {
+	{
+		cout << "NFA_substring_1110_DFA TEST 4: ";
+		if (NFA_to_DFA(NFA_substring_1110).isAccepted(myString("11110")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_5_DFA() {
+	{
+		cout << "NFA_substring_1110_DFA TEST 5: ";
+		if (NFA_to_DFA(NFA_substring_1110).isAccepted(myString("11101")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_6_DFA() {
+	{
+		cout << "NFA_substring_1110_DFA TEST 6: ";
+		if (NFA_to_DFA(NFA_substring_1110).isAccepted(myString("1111101")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_7_DFA() {
+	{
+		cout << "NFA_substring_1110_DFA TEST 7: ";
+		if (!NFA_to_DFA(NFA_substring_1110).isAccepted(myString("1")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_8_DFA() {
+	{
+		cout << "NFA_substring_1110_DFA TEST 8: ";
+		if (!NFA_to_DFA(NFA_substring_1110).isAccepted(myString("0")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_9_DFA() {
+	{
+		cout << "NFA_substring_1110_DFA TEST 9: ";
+		if (!NFA_to_DFA(NFA_substring_1110).isAccepted(myString("EPSILON")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_10_DFA() {
+	{
+		cout << "NFA_substring_1110_DFA TEST 10: ";
+		if (!NFA_to_DFA(NFA_substring_1110).isAccepted(myString("11")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_11_DFA() {
+	{
+		cout << "NFA_substring_1110_DFA TEST 11: ";
+		if (!NFA_to_DFA(NFA_substring_1110).isAccepted(myString("111")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+void test_NFA_substring_1110_12_DFA() {
+	{
+		cout << "NFA_substring_1110_DFA TEST 12: ";
+		if (!NFA_to_DFA(NFA_substring_1110).isAccepted(myString("1010")))
+			cout << "PASSED\n\n";
+		else
+			cout << "NOT PASSED\n\n";
+	}
+}
+
+//test for NFA_10s to DFA
+void test_NFA_10s_1_DFA() {
+	cout << "\n\nNFA_10s_DFA TEST 1: ";
+
+	if (NFA_to_DFA(NFA_10s).isAccepted(myString("10")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_2_DFA() {
+	cout << "NFA_10s_DFA TEST 2: ";
+	if (NFA_to_DFA(NFA_10s).isAccepted(myString("1010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_3_DFA() {
+	cout << "NFA_10s_DFA TEST 3: ";
+	if (NFA_to_DFA(NFA_10s).isAccepted(myString("101010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_4_DFA() {	cout << "NFA_10s_DFA TEST 4: ";
+	if (!NFA_to_DFA(NFA_10s).isAccepted(myString("0")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_5_DFA() {
+	cout << "NFA_10s_DFA TEST 5: ";
+	if (!NFA_to_DFA(NFA_10s).isAccepted(myString("1")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_6_DFA() {
+	cout << "NFA_10s_DFA TEST 6: ";
+	if (!NFA_to_DFA(NFA_10s).isAccepted(myString("00")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_7_DFA() {
+	cout << "NFA_10s_DFA TEST 7: ";
+	if (!NFA_to_DFA(NFA_10s).isAccepted(myString("01")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_8_DFA() {
+	cout << "NFA_10s_DFA TEST 8: ";
+	if (!NFA_to_DFA(NFA_10s).isAccepted(myString("11")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_9_DFA() {
+	cout << "NFA_10s_DFA TEST 9: ";
+	if (!NFA_to_DFA(NFA_10s).isAccepted(myString("000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_10_DFA() {
+	cout << "NFA_10s_DFA TEST 10: ";
+	if (!NFA_to_DFA(NFA_10s).isAccepted(myString("010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_11_DFA() {
+	cout << "NFA_10s_DFA TEST 11: ";
+	if (!NFA_to_DFA(NFA_10s).isAccepted(myString("1000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10s_12_DFA() {
+	cout << "NFA_10s_DFA TEST 12: ";
+	if (!NFA_to_DFA(NFA_10s).isAccepted(myString("10010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+//test for NFA_empty_string to DFA
+void test_NFA_empty_string_1_DFA() {
+	cout << "\n\nNFA_empty_string_DFA TEST 1: ";
+	if (NFA_to_DFA(NFA_empty_string).isAccepted(myString("EPSILON")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_2_DFA() {
+	cout << "NFA_empty_string_DFA TEST 2: ";
+	if (!NFA_to_DFA(NFA_empty_string).isAccepted(myString("0")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_3_DFA() {
+	cout << "NFA_empty_string_DFA TEST 3: ";
+	if (!NFA_to_DFA(NFA_empty_string).isAccepted(myString("1")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_4_DFA() {
+	cout << "NFA_empty_string_DFA TEST 4: ";
+	if (!NFA_to_DFA(NFA_empty_string).isAccepted(myString("00")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_5_DFA() {
+	cout << "NFA_empty_string_DFA TEST 5: ";
+	if (!NFA_to_DFA(NFA_empty_string).isAccepted(myString("01")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_6_DFA() {
+	cout << "NFA_empty_string_DFA TEST 6: ";
+	if (!NFA_to_DFA(NFA_empty_string).isAccepted(myString("000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_7_DFA() {
+	cout << "NFA_empty_string_DFA TEST 7: ";
+	if (!NFA_to_DFA(NFA_empty_string).isAccepted(myString("010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_8_DFA() {
+	cout << "NFA_empty_string_DFA TEST 8: ";
+	if (!NFA_to_DFA(NFA_empty_string).isAccepted(myString("110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_9_DFA() {
+	cout << "NFA_empty_string_DFA TEST 9: ";
+	if (!NFA_to_DFA(NFA_empty_string).isAccepted(myString("0000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_10_DFA() {
+	cout << "NFA_empty_string_DFA TEST 10: ";
+	if (!NFA_to_DFA(NFA_empty_string).isAccepted(myString("01000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_11_DFA() {
+	cout << "NFA_empty_string_DFA TEST 11: ";
+	if (!NFA_to_DFA(NFA_empty_string).isAccepted(myString("11110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_empty_string_12_DFA() {
+	cout << "NFA_empty_string_DFA TEST 12: ";
+	if (!NFA_to_DFA(NFA_empty_string).isAccepted(myString("100101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+//test for NFA_nonempty_string to DFA
+void test_NFA_nonempty_string_1_DFA() {
+	cout << "\n\nNFA_nonempty_string_DFA TEST 1: ";
+	if (!NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("EPSILON")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_2_DFA() {
+	cout << "NFA_nonempty_string_DFA TEST 2: ";
+	if (NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("0")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_3_DFA() {
+	cout << "NFA_nonempty_string_DFA TEST 3: ";
+	if (NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("1")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_4_DFA() {
+	cout << "NFA_nonempty_string_DFA TEST 5: ";
+	if (NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("10")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_5_DFA() {
+	cout << "NFA_nonempty_string_DFA TEST 5: ";
+	if (NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("11")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_6_DFA() {
+	cout << "NFA_nonempty_string_DFA TEST 6: ";
+	if (NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_7_DFA() {
+	cout << "NFA_nonempty_string_DFA TEST 7: ";
+	if (NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_8_DFA() {
+	cout << "NFA_nonempty_string_DFA TEST 8: ";
+	if (NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_9_DFA() {
+	cout << "NFA_nonempty_string_DFA TEST 9: ";
+	if (NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_10_DFA() {
+	cout << "NFA_nonempty_string_DFA TEST 10: ";
+	if (NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("1000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_11_DFA() {
+	cout << "NFA_nonempty_string_DFA TEST 11: ";
+	if (NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("1001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_nonempty_string_12_DFA() {
+	cout << "NFA_nonempty_string_DFA TEST 12: ";
+	if (NFA_to_DFA(NFA_nonempty_string).isAccepted(myString("1111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+//test for NFA_10 to DFA
+void test_NFA_10_1_DFA() {
+	cout << "\n\nNFA_10_DFA TEST 1: ";
+	if (NFA_to_DFA(NFA_10).isAccepted(myString("10")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_2_DFA() {
+	cout << "NFA_10_DFA TEST 2: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("1011"));
+	if (!NFA_to_DFA(NFA_10).isAccepted(myString("1011")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_3_DFA() {
+	cout << "NFA_10_DFA TEST 3: ";
+	if (!NFA_to_DFA(NFA_10).isAccepted(myString("011")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_4_DFA() {
+	cout << "NFA_10_DFA TEST 4: ";
+	if (!NFA_to_DFA(NFA_10).isAccepted(myString("1010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_5_DFA() {
+	cout << "NFA_10_DFA TEST 5: ";
+	if (!NFA_to_DFA(NFA_10).isAccepted(myString("101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_6_DFA() {
+	cout << "NFA_10_DFA TEST 6: ";
+	if (!NFA_to_DFA(NFA_10).isAccepted(myString("000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_7_DFA() {
+	cout << "NFA_10_DFA TEST 7: ";
+	if (!NFA_to_DFA(NFA_10).isAccepted(myString("100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_8_DFA() {
+	cout << "NFA_10_DFA TEST 8: ";
+	if (!NFA_to_DFA(NFA_10).isAccepted(myString("11")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_9_DFA() {
+	cout << "NFA_10_DFA TEST 9: ";
+	if (!NFA_to_DFA(NFA_10).isAccepted(myString("01")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_10_DFA() {
+	cout << "NFA_10_DFA TEST 10: ";
+	trace_tree test = NFA_Forking(NFA_10, myString("00"));
+	if (!NFA_to_DFA(NFA_10).isAccepted(myString("00")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_11_DFA() {
+	cout << "NFA_10_DFA TEST 11: ";
+	if (!NFA_to_DFA(NFA_10).isAccepted(myString("EPSILON")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_10_12_DFA() {
+	cout << "NFA_10_DFA TEST 12: ";
+	if (!NFA_to_DFA(NFA_10).isAccepted(myString("1")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+//test for NFA_non_empty_even_len to DFA
+void test_NFA_non_empty_even_len_1_DFA() {
+	cout << "\n\nNFA_non_empty_even_len_DFA TEST 1: ";
+	if (NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("10")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_2_DFA() {
+	cout << "NFA_non_empty_even_len_DFA TEST 2: ";
+	if (NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("1000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_3_DFA() {
+	cout << "NFA_non_empty_even_len_DFA TEST 3: ";
+	if (NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("11")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_4_DFA() {
+	cout << "NFA_non_empty_even_len_DFA TEST 4: ";
+	if (NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("00")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_5_DFA() {
+	cout << "NFA_non_empty_even_len_DFA TEST 5: ";
+	if (NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("1000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_6_DFA() {
+	cout << "NFA_non_empty_even_len_DFA TEST 6: ";
+	if (NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("1001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_7_DFA() {
+	cout << "NFA_non_empty_even_len_DFA TEST 7: ";
+	if (!NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("EPSILON")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_8_DFA() {
+	cout << "NFA_non_empty_even_len_DFA TEST 8: ";
+	if (!NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_9_DFA() {
+	cout << "NFA_non_empty_even_len_DFA TEST 9: ";
+	if (!NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("1")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_10_DFA() {
+	cout << "NFA_non_empty_even_len_DFA TEST 10: ";
+	if (!NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("0")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_11_DFA() {
+	cout << "NFA_non_empty_even_len_DFA TEST 11: ";
+	if (!NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_non_empty_even_len_12_DFA() {
+	cout << "NFA_non_empty_even_len_DFA TEST 12: ";
+	if (!NFA_to_DFA(NFA_non_empty_even_len).isAccepted(myString("01011")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+
+//test for NFA_0s to DFA
+void test_NFA_0s_1_DFA() {
+	cout << "\n\nNFA_0s_DFA TEST 1: ";
+	if (NFA_to_DFA(NFA_0s).isAccepted(myString("0")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_2_DFA() {
+	cout << "NFA_0s_DFA TEST 2: ";
+	if (NFA_to_DFA(NFA_0s).isAccepted(myString("00000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_3_DFA() {
+	cout << "NFA_0s_DFA TEST 3: ";
+	if (NFA_to_DFA(NFA_0s).isAccepted(myString("000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_4_DFA() {
+	cout << "NFA_0s_DFA TEST 4: ";
+	if (NFA_to_DFA(NFA_0s).isAccepted(myString("0000000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_5_DFA() {
+	cout << "NFA_0s_DFA TEST 5: ";
+	if (!NFA_to_DFA(NFA_0s).isAccepted(myString("01")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_6_DFA() {
+	cout << "NFA_0s_DFA TEST 6: ";
+	if (!NFA_to_DFA(NFA_0s).isAccepted(myString("010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_7_DFA() {
+	cout << "NFA_0s_DFA TEST 7: ";
+	if (!NFA_to_DFA(NFA_0s).isAccepted(myString("01110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_8_DFA() {
+	cout << "NFA_0s_DFA TEST 8: ";
+	if (!NFA_to_DFA(NFA_0s).isAccepted(myString("111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_9_DFA() {
+	cout << "NFA_0s_DFA TEST 9: ";
+	if (!NFA_to_DFA(NFA_0s).isAccepted(myString("1111111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_10_DFA() {
+	cout << "NFA_0s_DFA TEST 10: ";
+	if (!NFA_to_DFA(NFA_0s).isAccepted(myString("01010")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_11_DFA() {
+	cout << "NFA_0s_DFA TEST 11: ";
+	if (!NFA_to_DFA(NFA_0s).isAccepted(myString("000111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_12_DFA() {
+
+	cout << "NFA_0s_DFA TEST 12: ";
+	if (!NFA_to_DFA(NFA_0s).isAccepted(myString("1111111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+
+}
+
+//test for NFA_0s_or_01s to DFA
+void test_NFA_0s_or_01s_1_DFA() {
+	cout << "\n\nNFA_0s_or_01s_DFA TEST 1: ";
+	if (NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_2_DFA() {
+	cout << "NFA_0s_or_01s_DFA TEST 2: ";
+	if (NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("010101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_3_DFA() {
+	cout << "NFA_0s_or_01s_DFA TEST 3: ";
+	if (NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("00000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_4_DFA() {
+	cout << "NFA_0s_or_01s_DFA TEST 4: ";
+	if (NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("0101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_5_DFA() {
+	cout << "NFA_0s_or_01s_DFA TEST 5: ";
+	if (NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("00000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_6_DFA() {
+	cout << "NFA_0s_or_01s_DFA TEST 6: ";
+	if (NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("01010101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_7_DFA() {
+	cout << "NFA_0s_or_01s_DFA TEST 7: ";
+	if (!NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("10000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_8_DFA() {
+	cout << "NFA_0s_or_01s_DFA TEST 8: ";
+	if (!NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("10100")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_9_DFA() {
+	cout << "NFA_0s_or_01s_DFA TEST 9: ";
+	if (!NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("10000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_10_DFA() {
+	cout << "NFA_0s_or_01s_DFA TEST 10: ";
+	if (!NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("1")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_11_DFA() {
+	cout << "NFA_0s_or_01s_DFA TEST 11: ";
+	if (!NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("11000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_0s_or_01s_12_DFA() {
+	cout << "NFA_0s_or_01s_DFA TEST 12: ";
+	if (!NFA_to_DFA(NFA_0s_or_01s).isAccepted(myString("100001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
+
+//test for NFA_1s_or_end_0 to DFA
+void test_NFA_1s_or_end_0_1_DFA() {
+	cout << "\n\nNFA_1s_or_end_0_DFA TEST 1: ";
+	if (NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("11")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_2_DFA() {
+	cout << "NFA_1s_or_end_0_DFA TEST 2: ";
+	if (NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("110")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_3_DFA() {
+	cout << "NFA_1s_or_end_0_DFA TEST 2: ";
+	if (NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("11000")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_4_DFA() {
+	cout << "NFA_1s_or_end_0_DFA TEST 4: ";
+	if (NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("111111")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_5_DFA() {
+	cout << "NFA_1s_or_end_0_DFA TEST 5: ";
+	if (NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("00")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_6_DFA() {
+	cout << "NFA_1s_or_end_0_DFA TEST 6: ";
+	if (NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("10")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_7_DFA() {
+	cout << "NFA_1s_or_end_0_DFA TEST 7: ";
+	if (!NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("0101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_8_DFA() {
+	cout << "NFA_1s_or_end_0_DFA TEST 8: ";
+	if (!NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("100001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_9_DFA() {
+	cout << "NFA_1s_or_end_0_DFA TEST 9: ";
+	if (!NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("0101001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_10_DFA() {
+	cout << "NFA_1s_or_end_0_DFA TEST 10: ";
+	if (!NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("11101")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_11_DFA() {
+	cout << "NFA_1s_or_end_0_DFA TEST 11: ";
+	if (!NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("0001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+void test_NFA_1s_or_end_0_12_DFA() {
+	cout << "NFA_1s_or_end_0_DFA TEST 12: ";
+	if (!NFA_to_DFA(NFA_1s_or_end_0).isAccepted(myString("1101001")))
+		cout << "PASSED\n\n";
+	else
+		cout << "NOT PASSED\n\n";
+}
+
 
