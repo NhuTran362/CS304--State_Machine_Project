@@ -124,8 +124,6 @@ static  RE_Circ r_01_10_Start(r_01, r_10_Start);
 static  RE_Circ r_00(r0, r0);
 static  RE_Union r_00U01_10_Start(r_00, r_01_10_Start);
 
-
-
 //TASK 44
 void test_r1();
 void test_r2();
@@ -139,4 +137,7 @@ void test_r9();
 void test_r10();
 void test_r11();
 void test_r12();
+
+//TASK 45
+myString Regex_Generator(Regex* obj);
 #endif // !_REGEX_H_
