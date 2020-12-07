@@ -219,3 +219,18 @@ void myString::push_back(string newCharacter) {
 	}
 }
 
+myString operator+(const myString & obj1, const myString& obj2) {
+	myString obj = obj1;
+	for (auto &each : obj2.getAlphabet())
+		if (find(obj.alphabet.begin(), obj.alphabet.end(), each) == obj.alphabet.end()) {
+			obj.alphabetSize++;
+			obj.alphabet.insert(each);
+		}
+	for (auto &each : obj2._string) {
+		obj._string.push_back(each);
+		obj._stringLen++;
+	}
+	return obj;
+}
+
+
