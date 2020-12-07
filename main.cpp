@@ -654,6 +654,11 @@ int main(int argc, char * argv[]) {
 		 test_NFA_1s_or_end_0_10_DFA();
 		 test_NFA_1s_or_end_0_11_DFA();
 		 test_NFA_1s_or_end_0_12_DFA();
+	// TASK 40
+		 test_NFA_DFA_Equal_11_00();
+		 test_NFA_DFA_Equal_10s();
+		 test_NFA_DFA_Equal_10();
+		 test_NFA_DFA_Equal_0s();
 
 	
 	char c;
