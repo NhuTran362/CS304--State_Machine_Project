@@ -659,6 +659,20 @@ int main(int argc, char * argv[]) {
 		 test_NFA_DFA_Equal_10s();
 		 test_NFA_DFA_Equal_10();
 		 test_NFA_DFA_Equal_0s();
+	
+	//TASK 44
+		test_r1();
+		test_r2();
+		test_r3();
+		test_r4();
+		test_r5();
+		test_r6();
+		test_r7();
+		test_r8();
+		test_r9();
+		test_r10();
+		test_r11();
+		test_r12();
 
 	
 	char c;
