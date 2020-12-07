@@ -515,5 +515,12 @@ void test_NFA_KStart_10();
 void test_NFA_KStart_11();
 void test_NFA_KStart_12();
 
+//TASK 38
+DFA NFA_to_DFA(NFA& obj);
+vector<string> newState(string state, map<Pair, set<string>> nT, string character, map<string, vector<string>> closure);
+map<string, vector<string>> closure(vector<string>nstate, map<Pair, set<string>> nT);
+void E_move(string state, map<Pair, set<string>> nT, vector<string>& result);
+void vector_add(vector<string>& a, const vector<string>& b);
+
 #endif // !_NFA_H_
 
