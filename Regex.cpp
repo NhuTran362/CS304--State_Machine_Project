@@ -86,3 +86,41 @@ void test_r12() {
 	else
 		cout << "NOT PASSED\n\n";
 }
+
+//TASK 45
+myString Regex_Generator(Regex* obj) {
+	if (obj->type == "Empty")
+		return myString("false");
+	else if (obj->type == "Epsilon")
+		return myString("EPSILON");
+	else if (obj->type == "Character") {
+		RE_Char * temp = (RE_Char*)obj;
+		return myString(temp->getReg());
+	}
+	else if (obj->type == "Union") {
+		RE_Union * temp = (RE_Union *)obj;
+		myString t1 = Regex_Generator(&temp->getLhs());
+		if (t1 != myString("false"))
+			return t1;
+		else {
+			t1 = Regex_Generator(&temp->getrhs());
+			if (t1 != myString("false"))
+				return t1;
+		}
+		return myString("false");
+	}
+	else if (obj->type == "Start") {
+		return myString("EPSILON");
+	}
+	else if (obj->type == "Circ") {
+		RE_Circ* temp = (RE_Circ*)obj;
+		myString s1 = Regex_Generator(&temp->getLhs());
+		myString s2 = Regex_Generator(&temp->getRhs());
+		if (s1 != myString("false") && s2 != myString("false")){
+			return s1 + s2;
+		}
+		return myString("false");
+	}
+	return myString("false");
+
+}
