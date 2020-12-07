@@ -2050,4 +2050,130 @@ void test_NFA_KStart_12() {
 		cout << "NOT PASSED\n\n";
 }
 
+//TASK 38
+DFA NFA_to_DFA(NFA& obj) {
+	vector<string> nState = obj.getState();
+	vector<string> dState;
+	set<string> dAlphabet = obj.getAlphabet();
+	string dStartState = obj.getStartState();
+	map<Pair, set<string>> nT = obj.getTransition();
+	map<Pair, string> dT;
+	vector<string> nF = obj.getAcceptingState();
+	vector<string> dF;
+	map<string, vector<string>> E_closure = closure(nState, nT);
+
+	auto e = nT.find({ dStartState, "EPSILON" });
+	if ( e != nT.end()) {
+		auto e1 = E_closure.find(dStartState)->second;
+		for (unsigned i = 0; i < e1.size(); i++) {
+			if(dStartState.find(e1[i]) == std::string::npos)
+				dStartState += e1[i];
+		}
+	}
+	if (find(nF.begin(), nF.end(), obj.getStartState()) != nF.end())
+		dF.push_back(dStartState);
+	
+	string current = dStartState;
+	dState.push_back(current);
+
+	for (unsigned i = 0; i < dState.size(); i++) {
+		current = dState[i];
+		if (current != "dead") {
+			for (auto &symbol : dAlphabet) {
+				vector<string> nS;
+				for (unsigned j = 0; j < current.length(); j++) {
+					vector<string> temp = newState(string(1, current[j]), nT, symbol, E_closure);
+					vector_add(nS, temp);
+				}
+				string newS = "";
+				for (unsigned j = 0; j < nS.size(); ++j) 
+				
+						newS += nS[j];
+				if (newS.length() == 0)
+					newS = "dead";
+				//cout << "newS: " << newS << endl << endl;
+				dT[{current, symbol}] = newS;
+				if (find(dState.begin(), dState.end(), newS) == dState.end()) {
+					dState.push_back(newS);
+					for (unsigned k = 0; k < newS.length(); k++)
+						if (find(nF.begin(), nF.end(), string(1, newS[k])) != nF.end()) {
+							dF.push_back(newS);
+							break;
+						}
+				}
+			}
+		}
+
+	}
+	return DFA(dState, dAlphabet, dStartState, dT, dF);
+}
+map<string, vector<string>> closure(vector<string>nstate, map<Pair, set<string>> nT) {
+	map<string, vector<string>> result;
+	for (unsigned i = 0; i < nstate.size();i++) {
+		E_move(nstate[i], nT, result[nstate[i]]);
+	}
+	return result;
+}
+void E_move(string state, map<Pair, set<string>> nT, vector<string>& result){
+	result.push_back(state);
+	sort(result.begin(), result.end());
+	auto p = nT.find({ state, "EPSILON" });
+	if (p == nT.end())
+		return;
+	for (auto & each : p->second) 
+		if (find(result.begin(), result.end(), each) == result.end())
+			E_move(each, nT, result);
+	
+	return;
+} 
+vector<string> newState(string state, map<Pair, set<string>> nT, string character, map<string,vector<string>> closure) {
+	vector<string> result;
+	auto p = closure.find(state);
+	for (auto &each : p->second) {
+
+		auto p2 = nT.find({ each, character });
+		if (p2 != nT.end()) {
+			for (auto & each2 : p2->second) {
+				auto cl = closure.find(each2);
+				vector_add(result, cl->second);
+				
+			}
+		}
+
+	}
+	sort(result.begin(), result.end());
+	unique(result.begin(), result.end());
+	return result;
+
+	/*auto p = nT.find({ state,character });
+	
+	if (p != nT.end())
+		for (auto &each : p->second) {
+			cout << state << " " << character << ": " << each << endl;
+			result.push_back(each);
+		}
+		
+	//if (nT.find({ state,"EPSILON" }) != nT.end()) {
+		auto p2 = closure.find(state);
+		for (auto &each : p2->second) {
+			if (nT.find({ each,character }) != nT.end()) {
+				auto p3 = closure.find(each);
+				vector_add(result, p3->second);
+			}
+		}
+	//}	
+		if (result.size() == 0)
+			result.push_back("dead");
+	sort(result.begin(), result.end());
+	unique(result.begin(), result.end());
+	return result;*/
+}
+void vector_add(vector<string>& a, const vector<string>& b){
+	for (auto &each : b)
+		if (find(a.begin(), a.end(), each) == a.end())
+			a.push_back(each);
+	sort(a.begin(), a.end());
+	return;
+}
+
 
