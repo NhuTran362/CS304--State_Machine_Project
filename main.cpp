@@ -307,7 +307,7 @@ int main(int argc, char * argv[]) {
 	    test_NFA_10_12();
 
 		//test for NFA_non_empty_even_len
-		 \test_NFA_non_empty_even_len_1();
+		 test_NFA_non_empty_even_len_1();
 		 test_NFA_non_empty_even_len_2();
 		 test_NFA_non_empty_even_len_3();
 		 test_NFA_non_empty_even_len_4();
