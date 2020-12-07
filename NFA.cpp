@@ -1666,7 +1666,7 @@ void test_NFA_0s_or_01s_5() {
 }
 void test_NFA_0s_or_01s_6() {
 	cout << "NFA_0s_or_01s TEST 6: ";
-	if (NFA_Backtracking(NFA_0s_or_01s, myString("1010101")))
+	if (NFA_Backtracking(NFA_0s_or_01s, myString("01010101")))
 		cout << "PASSED\n\n";
 	else
 		cout << "NOT PASSED\n\n";
@@ -2072,8 +2072,11 @@ DFA NFA_to_DFA(NFA& obj) {
 				dStartState += e1[i];
 		}
 	}
-	if (find(nF.begin(), nF.end(), obj.getStartState()) != nF.end())
-		dF.push_back(dStartState);
+	for(unsigned i = 0; i < dStartState.size(); i++)
+		if (find(nF.begin(), nF.end(), string(1,dStartState[i])) != nF.end()) {
+			dF.push_back(dStartState);
+			break;
+		}
 	
 	string current = dStartState;
 	dState.push_back(current);
@@ -2146,29 +2149,6 @@ vector<string> newState(string state, map<Pair, set<string>> nT, string characte
 	sort(result.begin(), result.end());
 	unique(result.begin(), result.end());
 	return result;
-
-	/*auto p = nT.find({ state,character });
-	
-	if (p != nT.end())
-		for (auto &each : p->second) {
-			cout << state << " " << character << ": " << each << endl;
-			result.push_back(each);
-		}
-		
-	//if (nT.find({ state,"EPSILON" }) != nT.end()) {
-		auto p2 = closure.find(state);
-		for (auto &each : p2->second) {
-			if (nT.find({ each,character }) != nT.end()) {
-				auto p3 = closure.find(each);
-				vector_add(result, p3->second);
-			}
-		}
-	//}	
-		if (result.size() == 0)
-			result.push_back("dead");
-	sort(result.begin(), result.end());
-	unique(result.begin(), result.end());
-	return result;*/
 }
 void vector_add(vector<string>& a, const vector<string>& b){
 	for (auto &each : b)
@@ -3246,7 +3226,7 @@ void test_NFA_1s_or_end_0_12_DFA() {
 
 //TASK 40
 void test_NFA_DFA_Equal_11_00() {
-	cout << "\n\ntest_NFA_DFA_Equal_11_00: ";
+	cout << "test_NFA_DFA_Equal_11_00: ";
 	DFA test({ "0","1","2","3","4" }, { "0","1" }, "0", { {{"0","1"}, "1"}, {{"1","0"},"0"}, {{"1","1"},"2"}, {{"2","0"},"3"}, {{"3","0"},"4"}, {{"3","1"},"1"} }, { "4" });
 	if (DFA_Equality(test, NFA_to_DFA(NFA_11_00)))
 		cout << "PASSED\n\n";
@@ -3254,7 +3234,7 @@ void test_NFA_DFA_Equal_11_00() {
 		cout << "NOT PASSED\n\n";
 }
 void test_NFA_DFA_Equal_10s() {
-	cout << "\n\ntest_NFA_DFA_Equal_10s: ";
+	cout << "test_NFA_DFA_Equal_10s: ";
 	DFA test({ "0","1","2","3" }, { "0","1" }, "0", { {{"0","1"}, "1"}, {{"0","0"}, "3"}, {{"1","0"}, "2"}, {{"1","1"}, "3"}, {{"2","1"}, "1"}, {{"2","0"}, "3"}, }, { "0", "2" });
 	if (DFA_Equality(test, NFA_to_DFA(NFA_10s)))
 		cout << "PASSED\n\n";
@@ -3262,7 +3242,7 @@ void test_NFA_DFA_Equal_10s() {
 		cout << "NOT PASSED\n\n";
 }
 void test_NFA_DFA_Equal_10() {
-	cout << "\n\ntest_NFA_DFA_Equal_10: ";
+	cout << "test_NFA_DFA_Equal_10: ";
 	DFA test({ "0","1","2","3" }, { "0","1" }, "0", { {{"0","1"}, "1"}, {{"0","0"}, "3"}, {{"1","0"}, "2"}, {{"1","1"}, "3"}, {{"2","1"}, "3"}, {{"2","0"}, "3"}, }, { "2" });
 	if (DFA_Equality(test, NFA_to_DFA(NFA_10)))
 		cout << "PASSED\n\n";
@@ -3271,7 +3251,7 @@ void test_NFA_DFA_Equal_10() {
 
 }
 void test_NFA_DFA_Equal_0s() {
-	cout << "\n\ntest_NFA_DFA_Equal_0s: ";
+	cout << "test_NFA_DFA_Equal_0s: ";
 	DFA test({ "0","1", "2" }, { "0","1" }, "0", { {{"0","0"}, "1"},  {{"0","1"}, "2"}, {{"1","1"}, "2"} }, { "1" });
 	if (DFA_Equality(test, NFA_to_DFA(NFA_0s)))
 		cout << "PASSED\n\n";
