@@ -1,6 +1,7 @@
 #include "myString.h"
 #include "DFA.h"
 #include "NFA.h"
+#include "Regex.h"
 
 int main(int argc, char * argv[]) {
 
