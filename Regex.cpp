@@ -103,7 +103,7 @@ myString Regex_Generator(Regex* obj) {
 		if (t1 != myString("false"))
 			return t1;
 		else {
-			t1 = Regex_Generator(&temp->getrhs());
+			t1 = Regex_Generator(&temp->getRhs());
 			if (t1 != myString("false"))
 				return t1;
 		}
