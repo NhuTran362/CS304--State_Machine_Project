@@ -63,13 +63,33 @@ public:
 	}
 	void print_regex() { cout << "( "; reg->print_regex(); cout << "*"; cout << ")"; }
 	bool accept(myString r) {
+		if (r == myString("EPSILON"))
+			return true;
 		string a = "";
+		vector<int> marker;
 		for (int i = 0; i < r.getStringLen(); i++) {
 			a += r.getCharacterAt(i);
-			if (reg->accept(myString(a)))
-				a = "";
-		}	
-		return (a == "");
+			if (reg->accept(myString(a))) {
+				marker.push_back(i);
+				if (i == r.getStringLen() - 1)
+					return true;
+			}
+		}
+		int k = 0;
+		while (k < marker.size()) {
+			a = "";
+			for (int i = marker[k] + 1; i < r.getStringLen(); i++) {
+				a += r.getCharacterAt(i);			
+				if (reg->accept(myString(a))) {
+					cout << r.getStringLen() - 1 << endl;
+					if (i == r.getStringLen() - 1)
+						return true;
+					marker.push_back(i);
+				}
+			}
+			k++;
+		}
+		return false;
 	}
 	Regex* getReg() const { return reg; }
 private:
